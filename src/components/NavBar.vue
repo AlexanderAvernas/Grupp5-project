@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Restaurang</a>
+      <h1 class="navbar-brand">Restaurang</h1>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,13 +19,13 @@ import { RouterLink, RouterView } from "vue-router";
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <RouterLink to="/about">Boka</RouterLink>
+            <RouterLink class="nav-link" to="/">Hem</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/about">Meny</RouterLink>
+            <RouterLink class="nav-link" to="/menu">Meny</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/about">Om Oss</RouterLink>
+            <RouterLink class="nav-link" to="/about">Om Oss</RouterLink>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -39,8 +39,10 @@ import { RouterLink, RouterView } from "vue-router";
               Dropdown link
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><RouterLink to="/about">Kontakt</RouterLink></li>
-              <li><RouterLink to="/about">Mer</RouterLink></li>
+              <li>
+                <RouterLink class="nav-link" to="/contact">Kontakt</RouterLink>
+              </li>
+              <li><RouterLink class="nav-link" to="/more">Mer</RouterLink></li>
             </ul>
           </li>
         </ul>
@@ -49,4 +51,8 @@ import { RouterLink, RouterView } from "vue-router";
   </nav>
   <RouterView />
 </template>
-<style></style>
+<style>
+.nav-link {
+  text-decoration: none;
+}
+</style>
