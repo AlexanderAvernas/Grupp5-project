@@ -19,13 +19,13 @@ import { RouterLink, RouterView } from "vue-router";
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <RouterLink to="/about">Boka</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/about">Meny</RouterLink>
+          </li>
+          <li class="nav-item">
             <RouterLink to="/about">Om Oss</RouterLink>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -39,9 +39,8 @@ import { RouterLink, RouterView } from "vue-router";
               Dropdown link
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><RouterLink to="/about">Kontakt</RouterLink></li>
+              <li><RouterLink to="/about">Mer</RouterLink></li>
             </ul>
           </li>
         </ul>
@@ -50,3 +49,4 @@ import { RouterLink, RouterView } from "vue-router";
   </nav>
   <RouterView />
 </template>
+<style></style>
