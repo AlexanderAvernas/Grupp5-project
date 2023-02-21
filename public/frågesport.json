@@ -1,0 +1,43 @@
+[
+    {
+        "id": "1",
+        "fråga": "Vad är numret på den svarta bollen i poolen?",
+        "svar": "8",
+        "felsvar1": "9",
+        "felsvar2": "0",
+        "felsvar3": "10"
+    },
+    {
+        "id": "2",
+        "fråga": "vem är vargen från filmen puss in boots the last wish",
+        "svar": "döden",
+        "felsvar1": "kattens vän",
+        "felsvar2": "varg med attityd",
+        "felsvar3": "god hjälte"
+    },
+    {
+        "id": "3",
+        "fråga": "Vilka av dessa berömda kompositörer var döva?",
+        "svar": "Beethoven",
+        "felsvar1": "Mozart",
+        "felsvar2": "Bach",
+        "felsvar3": "Händel"
+    },
+    {
+        "id": "4",
+        "fråga": "vad känner programmerare efter lång dag med kod som hade massa bugger och äntligen blev färdig",
+        "svar": "dags att ta friskluft",
+        "felsvar1": "jag är nöjd",
+        "felsvar2": "inget nytt",
+        "felsvar3": "nu behöver jag hammare"
+    },
+    {
+        "id": "5",
+        "fråga": "vem är bästa läraren",
+        "svar": "richard",
+        "felsvar1": "random matte lärare",
+        "felsvar2": "random historia lärare",
+        "felsvar3": "random språk lärare"
+    }
+
+]
