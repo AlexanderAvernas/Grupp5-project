@@ -2,9 +2,8 @@
 import { RouterLink, RouterView } from "vue-router";
 </script>
 <template>
-  <nav class="navbar bg-light fixed-top">
+  <nav class="navbar fixed-top">
     <div class="container-fluid">
-      <h1 class="navbar-brand"></h1>
       <button
         class="navbar-toggler"
         type="button"
@@ -15,7 +14,7 @@ import { RouterLink, RouterView } from "vue-router";
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        class="offcanvas offcanvas-end"
+        class="offcanvas offcanvas-start"
         tabindex="-1"
         id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel"
@@ -30,12 +29,15 @@ import { RouterLink, RouterView } from "vue-router";
           ></button>
         </div>
         <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
             <li class="nav-item">
               <RouterLink class="nav-link" to="/">Hem</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/about">Om Oss</RouterLink>
+              <RouterLink class="nav-link" to="/booking">Bokning</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/menu">Meny</RouterLink>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -49,13 +51,9 @@ import { RouterLink, RouterView } from "vue-router";
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <RouterLink class="nav-link" to="/about">Om Oss</RouterLink>
-                </li>
-                <li>
-                  <RouterLink class="nav-link" to="/about">Om Oss</RouterLink>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
+                  <RouterLink class="nav-link" to="/contact"
+                    >Kontakt</RouterLink
+                  >
                 </li>
                 <li>
                   <RouterLink class="nav-link" to="/about">Om Oss</RouterLink>
@@ -69,8 +67,19 @@ import { RouterLink, RouterView } from "vue-router";
   </nav>
   <RouterView />
 </template>
-<style>
+<style scoped>
 .nav-link {
   text-decoration: none;
+  color: #000;
+  transition: 0.4s;
+}
+
+.nav-link:hover {
+  color: green;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.5rem;
 }
 </style>
