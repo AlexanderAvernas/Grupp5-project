@@ -10,6 +10,7 @@
         </div>
       </div>
     </div>
+    <h1>{{ seats[0].id }}</h1>
   </div>
 </template>
 
@@ -54,6 +55,7 @@ export default {
 }
 .seat-container {
   display: flex;
+  flex-direction: column;
 }
 .seat {
   width: 1em;
@@ -64,6 +66,9 @@ export default {
   line-height: 50px;
   margin: 1em;
   cursor: pointer;
+}
+.seat:hover {
+  transform: scale(1.2);
 }
 .available {
   background-color: #90ca82;
