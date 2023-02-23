@@ -3,20 +3,26 @@ import FoodMenu from "../components/FoodMenu.vue";
 </script>
 
 <template>
-  <main class="landing-page">
+  <div class="landing-page">
     <h1>Lorem Ipsum</h1>
     <button>BOKA BORD</button>
     <p>
       En kort beskrivning av konceptet. Att bordet bokas, maten bokas och allt
       är redo när kunden väl är framme bla bla bla och mer bla
     </p>
-  </main>
+  </div>
   <FoodMenu />
 </template>
 <style scoped>
 /* Fonts imports from google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amiko&display=swap");
+
+.landing-page {
+  background-image: url("../assets/pics/landing_page.jpg");
+  background-repeat: no-repeat;
+  background-size: covers;
+}
 
 h1 {
   position: absolute;
