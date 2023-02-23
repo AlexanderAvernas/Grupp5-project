@@ -1,16 +1,5 @@
 <template>
   <div class="container">
-    <h1> hej {{ seat }}</h1>
-    <div class="seat-container">
-      <div v-for="seat in seats" :key="seat.id" @click="selectSeat(seat)">
-        <div v-if="seat.available" class="seat available">
-          {{ seat.id }}
-        </div>
-        <div v-else class="seat unavailable">
-          {{ seat.id }}
-        </div>
-      </div>
-    </div>
     <div class="seat-container">
       <div v-for="seat in seats" :key="seat.id" @click="selectSeat(seat)">
         <div v-if="seat.available" class="seat available">
@@ -32,6 +21,13 @@
       </div>
     </div>
   </div>
+  <div class="input-container">
+    <select v-model="selectedOption" name="How many are you" id="Guests">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+  </div>
 </template>
 
 <script>
@@ -41,9 +37,9 @@ export default {
       seats: [
         { id: 1, available: true },
         { id: 2, available: true },
-        { id: 3, available: false },
+        { id: 3, available: true },
         { id: 4, available: true },
-        { id: 5, available: false },
+        { id: 5, available: true },
         { id: 6, available: true },
         { id: 7, available: true },
         { id: 8, available: true },
@@ -52,12 +48,24 @@ export default {
         { id: 11, available: true },
       ],
       tables: [
-        { id: 2, available: true },
+        { id: 22, available: true },
         { id: 23, available: true },
         { id: 24, available: false },
         { id: 25, available: true },
       ],
+      selectedOption: 0,
     };
+  },
+  watch: {
+    selectedOption(val) {
+      if (val === 1) {
+        this.seats[0].available = true;
+
+      } else {
+        this.seats[0].available = false;
+
+      }
+    },
   },
   methods: {
     selectSeat: (seat) => {
@@ -68,7 +76,6 @@ export default {
         alert("Not available");
       }
     },
-
   },
 };
 </script>
@@ -87,12 +94,12 @@ export default {
 }
 
 .table-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .table {
-    margin: 1em;
+  margin: 1em;
 }
 .seat {
   width: 2em;
