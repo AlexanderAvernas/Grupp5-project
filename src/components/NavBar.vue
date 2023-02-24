@@ -34,7 +34,7 @@ import { RouterLink, RouterView } from "vue-router";
               <RouterLink class="nav-link" to="/">Hem</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/booking">Bokning</RouterLink>
+              <RouterLink class="nav-link" to="/booking">Boka Bord</RouterLink>
             </li>
             <li class="nav-item">
               <RouterLink class="nav-link" to="/menu">Meny</RouterLink>
