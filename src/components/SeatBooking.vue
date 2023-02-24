@@ -108,14 +108,19 @@ export default {
         { id: 12, available: true },
         { id: 13, available: true },
       ],
+      selectedOption: 1,
     };
   },
   watch: {
-    selectedOption(val) {
-      if (val === 1) {
-        this.seats[0].available = true;
+    selectedOption(value) {
+      if (value === 2) {
+        (this.tablesLeft[2].available = true),
+          (this.tablesCenterL[0].available = true),
+          (this.tablesCenterL[1].available = true);
       } else {
-        this.seats[0].available = false;
+        (this.tablesLeft[2].available = false),
+          (this.tablesCenterL[0].available = false),
+          (this.tablesCenterL[1].available = false);
       }
     },
   },
