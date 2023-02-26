@@ -1,83 +1,130 @@
 <template>
-  <div class="container">
-    <div class="tablesRight-container">
-      <div
-        v-for="tableRight in tablesRight"
-        :key="tableRight.id"
-        @click="selectSeat(tableRight)"
-      >
-        <div v-if="tableRight.available" class="seat available">
-          {{ tableRight.id }}
-        </div>
-        <div v-else class="seat unavailable">
-          {{ tableRight.id }}
-        </div>
+  <div class="background-image">
+    <!-- TEXT FIELDS -->
+    <div class="text-container">
+      <div class="bordsbokning"><h1>BORDSBOKNING</h1></div>
+      <div class="text">
+        <p>
+          Börja med att välja datum och tid för erat besök sedan väljer ni det
+          antal ni blir i sällskapet och därefter väljer ni bord genom att
+          klicka på den plats ni önskar
+        </p>
       </div>
     </div>
-    <div class="tableLeft-container">
-      <div
-        v-for="tableLeft in tablesLeft"
-        :key="tableLeft.id"
-        @click="selectSeat(tableLeft)"
-      >
-        <div v-if="tableLeft.available" class="seat available">
-          {{ tableLeft.id }}
-        </div>
-        <div v-else class="seat unavailable">
-          {{ tableLeft.id }}
+    <!-- INPUT FIELDS -->
+    <div class="input-container">
+      <form class="form">
+        <label for="date">Datum:</label>
+        <input type="date" name="date" value="" />
+        <label for="time">TID:</label>
+        <input type="time" step="3600000" name="time" value="14:00" />
+        <label for="guests">Antal:</label>
+        <select v-model="selectedOption" name="guests" id="Guests">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </form>
+    </div>
+
+    <!-- TABLE LAYOUT -->
+    <div class="container">
+      <div class="tablesRight-container">
+        <div
+          v-for="tableRight in tablesRight"
+          :key="tableRight.id"
+          @click="selectSeat(tableRight)"
+        >
+          <div v-if="tableRight.available" class="seat available">
+            {{ tableRight.id }}
+          </div>
+          <div v-else class="seat unavailable">
+            {{ tableRight.id }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="tableBottom-container">
-      <div
-        v-for="tableBottom in tablesBottom"
-        :key="tableBottom.id"
-        @click="selectSeat(tableBottom)"
-      >
-        <div v-if="tableBottom.available" class="seat available">
-          {{ tableBottom.id }}
-        </div>
-        <div v-else class="seat unavailable">
-          {{ tableBottom.id }}
-        </div>
-      </div>
-    </div>
-    <div class="tableCenter-container">
-      <div
-        id="centerSeat"
-        v-for="tableCenter in tablesCenter"
-        :key="tableCenter.id"
-        @click="selectSeat(tableCenter)"
-      >
-        <div v-if="tableCenter.available" class="seat available">
-          {{ tableCenter.id }}
-        </div>
-        <div v-else class="seat unavailable">
-          {{ tableCenter.id }}
+      <div class="tableLeft-container">
+        <div
+          v-for="tableLeft in tablesLeft"
+          :key="tableLeft.id"
+          @click="selectSeat(tableLeft)"
+        >
+          <div v-if="tableLeft.available" class="seat available">
+            {{ tableLeft.id }}
+          </div>
+          <div v-else class="seat unavailable">
+            {{ tableLeft.id }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="tableCenterL-container">
-      <div
-        v-for="tableCenterL in tablesCenterL"
-        :key="tableCenterL.id"
-        @click="selectSeat(tableCenterL)"
-      >
-        <div v-if="tableCenterL.available" class="seat available">
-          {{ tableCenterL.id }}
+      <div class="tableBottom-container">
+        <div
+          v-for="tableBottom in tablesBottom"
+          :key="tableBottom.id"
+          @click="selectSeat(tableBottom)"
+        >
+          <div v-if="tableBottom.available" class="seat available">
+            {{ tableBottom.id }}
+          </div>
+          <div v-else class="seat unavailable">
+            {{ tableBottom.id }}
+          </div>
         </div>
-        <div v-else class="seat unavailable">
-          {{ tableCenterL.id }}
+      </div>
+      <div class="tableCenter-container">
+        <div
+          id="centerSeat"
+          v-for="tableCenter in tablesCenter"
+          :key="tableCenter.id"
+          @click="selectSeat(tableCenter)"
+        >
+          <div v-if="tableCenter.available" class="seat available">
+            {{ tableCenter.id }}
+          </div>
+          <div v-else class="seat unavailable">
+            {{ tableCenter.id }}
+          </div>
+        </div>
+      </div>
+      <div class="tableCenterL-container">
+        <div
+          v-for="tableCenterL in tablesCenterL"
+          :key="tableCenterL.id"
+          @click="selectSeat(tableCenterL)"
+        >
+          <div v-if="tableCenterL.available" class="seat available">
+            {{ tableCenterL.id }}
+          </div>
+          <div v-else class="seat unavailable">
+            {{ tableCenterL.id }}
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="input-container">
-    <select v-model="selectedOption" name="How many are you" id="Guests">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-    </select>
+  <div class="button-container">
+    <button type="button">VIDARE TILL MENYN</button>
+  </div>
+  <!-- FOOTER -->
+  <div class="footer-container">
+    <div id="item1"><p>© 2023 GRUPP 5</p></div>
+    <div id="item2">
+      <img
+        class="logo"
+        src="../assets/pics/logos/facebook.png"
+        alt="facebook logo"
+      />
+      <img
+        class="logo"
+        src="../assets/pics/logos/insta.png"
+        alt="instagram logo"
+      />
+      <img
+        class="logo"
+        src="../assets/pics/logos/tiktok.png"
+        alt="tiktok logo"
+      />
+    </div>
   </div>
 </template>
 
@@ -111,19 +158,6 @@ export default {
       selectedOption: 1,
     };
   },
-  watch: {
-    selectedOption(value) {
-      if (value === 2) {
-        (this.tablesLeft[2].available = true),
-          (this.tablesCenterL[0].available = true),
-          (this.tablesCenterL[1].available = true);
-      } else {
-        (this.tablesLeft[2].available = false),
-          (this.tablesCenterL[0].available = false),
-          (this.tablesCenterL[1].available = false);
-      }
-    },
-  },
   methods: {
     selectSeat: (seat) => {
       if (seat.available) {
@@ -142,13 +176,12 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  margin-top: 10em;
-  border: 3px solid;
+
+  margin: 20% auto;
+  border: 10px solid;
   background-color: #1c1c1c;
-  height: 529px;
+  height: 579px;
   width: 799px;
-  left: 240px;
-  top: 398px;
   border-radius: 25px;
   place-content: center;
 }
@@ -233,7 +266,9 @@ div.tablesRight-container > div:nth-child(2) > div {
   cursor: pointer;
   background-color: #d9d9d9;
 }
+
 /* .seat:hover {
+
   background-color: #1a630e;
 } */
 .seat.available:hover {
@@ -244,5 +279,125 @@ div.tablesRight-container > div:nth-child(2) > div {
 .unavailable {
   background-color: #ad1c1c;
   color: white;
+}
+/* Background image */
+.background-image {
+  background-image: url("../assets/pics/booking_page.jpg");
+  height: 1487px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* TEXT TILL BORDSBOKNING */
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+.bordsbokning {
+  position: absolute;
+  width: 305px;
+  height: 61px;
+  top: 62px;
+  font-family: "Amiko", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 47px;
+  color: #ffffff;
+  text-align: center;
+}
+.text {
+  position: absolute;
+  width: 499px;
+  top: 123px;
+  font-family: "Amiko", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+
+  color: #ffffff;
+}
+.input-container {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form {
+  position: absolute;
+  width: fit-content;
+  height: 31px;
+  top: 264px;
+  font-family: "Amiko", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+input {
+  background-color: #d9d9d9;
+  border-radius: 6px;
+}
+/* BUTTON VIDARE TILL MENY */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* BUTTON VIDARE TILL MENY */
+button {
+  position: absolute;
+  width: 247px;
+  height: 54px;
+  top: 1150px;
+  color: #fff;
+  background-color: #221109;
+  border: 2px solid #ad8e6d;
+  border-radius: 27px;
+  font-family: "Amiko" sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+button:hover {
+  transform: scale(1.1);
+}
+/* FOOTER */
+.footer-container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 52px;
+
+  top: 1435px;
+  background: rgba(28, 28, 28, 0.8);
+}
+#item1 {
+  padding-top: 1em;
+  padding-left: 2em;
+  color: #ffffff;
+}
+#item2 {
+  padding-top: 0.5em;
+  padding-right: 2em;
+  margin: 0 0 0 auto;
+}
+.logo {
+  margin: 9px;
+  width: 23px;
+  height: 23px;
+  left: 1135px;
+  top: 1185px;
 }
 </style>
