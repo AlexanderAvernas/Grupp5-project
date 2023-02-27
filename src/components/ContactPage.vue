@@ -188,7 +188,7 @@ input {
   radius: 4px;
   position: absolute;
   width: 21rem;
-  height: 1.5rem;
+  height: 1.7rem;
   left: 60vw;
   top: 55vh;
   background: #d9d9d9;
