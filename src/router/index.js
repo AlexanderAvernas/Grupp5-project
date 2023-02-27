@@ -20,6 +20,11 @@ const router = createRouter({
       name: "Quiz",
       component: QuizView,
     },
+    {
+      path: "/contact",
+      name: "ContactPage",
+      component: () => import("../components/ContactPage.vue"),
+    },
   ],
 });
 
