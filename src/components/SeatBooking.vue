@@ -181,6 +181,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -306,7 +307,6 @@ div.tablesRight-container > div:nth-child(2) > div {
   align-items: center;
 }
 /* TEXT TILL BORDSBOKNING */
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 .bordsbokning {
   position: absolute;
   width: 305px;
