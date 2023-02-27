@@ -14,7 +14,6 @@ import FoodMenu from "../components/FoodMenu.vue";
   <FoodMenu />
 </template>
 
-
 <style scoped>
 /* Fonts imports from google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
@@ -24,21 +23,21 @@ import FoodMenu from "../components/FoodMenu.vue";
   background-image: url("../assets/pics/landing_page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 50%;
+  width: 50vw;
   height: 100vh;
 }
 
 .landing-title {
   position: relative;
-  width: 18rem;
-  height: 8rem;
+  width: 18vw;
+  height: 8vh;
   left: 15vw;
   top: 3vh;
   font-family: "Mrs Sheppards";
   font-style: normal;
   font-weight: 400;
-  font-size: 120px;
-  line-height: 150px;
+  font-size: 7.5rem;
+  line-height: 9.3rem;
   text-align: center;
   color: #fff;
   text-shadow: -8px 7px 4px #000000;
@@ -46,9 +45,9 @@ import FoodMenu from "../components/FoodMenu.vue";
 
 .landing-btn {
   position: relative;
-  width: 14rem;
-  height: 3rem;
-  left: 17vw;
+  width: 15rem;
+  height: 5vh;
+  left: 18vw;
   top: 35vh;
   color: #fff;
   background-color: #000;
@@ -58,17 +57,29 @@ import FoodMenu from "../components/FoodMenu.vue";
 
 .landing-text {
   position: relative;
-  width: 29rem;
-  height: 12rem;
+  width: 28vw;
+  height: 12vh;
   left: 11vw;
   top: 45vh;
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 24px;
   text-align: center;
   color: #fff;
 }
-</style>
 
+@media screen and (max-width: 440px) {
+  .landing-page {
+    width: 100vw;
+  }
+  .landing-title {
+    width: 70vw;
+    font-size: 6.5rem;
+  }
+  .landing-text {
+    width: 80vw;
+  }
+}
+</style>
