@@ -31,7 +31,7 @@ import { RouterLink, RouterView } from "vue-router";
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/">Hem</RouterLink>
+              <RouterLink class="nav-link" to="/Quiz">Hem</RouterLink>
             </li>
             <li class="nav-item">
               <RouterLink class="nav-link" to="/booking">Boka Bord</RouterLink>
