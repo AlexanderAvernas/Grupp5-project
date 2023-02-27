@@ -19,7 +19,7 @@
         <label for="time">TID:</label>
         <input type="time" step="3600000" name="time" value="14:00" />
         <label for="guests">Antal:</label>
-        <select v-model="selectedOption" name="guests" id="Guests">
+        <select v-model="selectedOption" name="guests">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -155,15 +155,15 @@ export default {
         { id: 12, available: true },
         { id: 13, available: true },
       ],
+      selectedOption: 0,
     };
   },
   watch: {
     selectedOption(val) {
       if (val === 1) {
-        this.tablesBottom[0].available = true;
+        this.tablesRight[1].available = true;
       } else {
-        this.seats[0].available = false;
-        console.log("object");
+        this.tablesRight[1].available = false;
       }
     },
   },
@@ -222,7 +222,6 @@ div.tableCenterL-container > div:nth-child(1) > div {
 div.tableCenterL-container > div:nth-child(2) > div {
   width: 96px;
 }
-
 /* TABLE LEFT START */
 .tableLeft-container {
   grid-column: 1 / 2;
@@ -259,7 +258,6 @@ div.tablesRight-container > div:nth-child(2) > div {
   width: 96px;
   text-align: center;
 }
-
 /* TABLE BOTTOM START */
 .tableBottom-container {
   display: flex;
@@ -267,7 +265,6 @@ div.tablesRight-container > div:nth-child(2) > div {
   grid-column: 4 / 4;
   grid-row: 2;
 }
-
 .seat {
   height: 48px;
   width: 48px;
@@ -280,12 +277,15 @@ div.tablesRight-container > div:nth-child(2) > div {
   background-color: #d9d9d9;
 }
 
+/* .seat:hover {
+
+  background-color: #1a630e;
+} */
 .seat.available:hover {
   background-color: #1a630e;
   color: #fff;
   transform: scale(1.1);
 }
-
 .unavailable {
   background-color: #ad1c1c;
   color: white;
