@@ -13,6 +13,8 @@ import FoodMenu from "../components/FoodMenu.vue";
   </div>
   <FoodMenu />
 </template>
+
+
 <style scoped>
 /* Fonts imports from google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
@@ -82,3 +84,4 @@ import FoodMenu from "../components/FoodMenu.vue";
   }
 }
 </style>
+
