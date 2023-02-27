@@ -59,4 +59,11 @@
 .menu-item {
   text-align: center;
 }
+
+@media screen and (max-width: 440px) {
+  .food-menu {
+    position: relative;
+    width: 100%;
+  }
+}
 </style>
