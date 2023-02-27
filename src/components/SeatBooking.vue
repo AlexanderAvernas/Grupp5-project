@@ -19,7 +19,7 @@
         <label for="time">TID:</label>
         <input type="time" step="3600000" name="time" value="14:00" />
         <label for="guests">Antal:</label>
-        <select v-model="selectedOption" name="guests" id="Guests">
+        <select v-model="selectedOption" name="guests">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -155,8 +155,17 @@ export default {
         { id: 12, available: true },
         { id: 13, available: true },
       ],
-      selectedOption: 1,
+      selectedOption: 0,
     };
+  },
+  watch: {
+    selectedOption(val) {
+      if (val === 1) {
+        this.tablesRight[1].available = true;
+      } else {
+        this.tablesRight[1].available = false;
+      }
+    },
   },
   methods: {
     selectSeat: (seat) => {

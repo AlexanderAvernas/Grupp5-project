@@ -51,7 +51,7 @@ import { RouterLink, RouterView } from "vue-router";
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <RouterLink class="nav-link" to="/contact"
+                  <RouterLink class="nav-link" to="/ThanksForOrdering"
                     >Kontakt</RouterLink
                   >
                 </li>
