@@ -1,7 +1,7 @@
 <script setup>
-import ThanksForOrdering from '../components/ThanksForOrdering.vue';
+import ThanksForOrdering from "../components/ThanksForOrdering.vue";
 </script>
 
 <template>
-    <ThanksForOrdering/>
+  <ThanksForOrdering />
 </template>
