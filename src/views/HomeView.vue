@@ -46,9 +46,9 @@ import FoodMenu from "../components/FoodMenu.vue";
 .landing-btn {
   position: relative;
   width: 15rem;
-  height: 5vh;
-  left: 18vw;
-  top: 35vh;
+  height: 7vh;
+  left: 17vw;
+  top: 48vh;
   color: #fff;
   background-color: #000;
   border: 2px solid #ad8e6d;
@@ -59,8 +59,8 @@ import FoodMenu from "../components/FoodMenu.vue";
   position: relative;
   width: 28vw;
   height: 12vh;
-  left: 11vw;
-  top: 45vh;
+  left: 12vw;
+  top: 54vh;
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -77,6 +77,10 @@ import FoodMenu from "../components/FoodMenu.vue";
   .landing-title {
     width: 70vw;
     font-size: 6.5rem;
+  }
+  .landing-btn {
+    top: 40vh;
+    left: 22vw;
   }
   .landing-text {
     width: 80vw;
