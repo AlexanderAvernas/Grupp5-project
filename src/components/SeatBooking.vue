@@ -416,7 +416,7 @@ button:hover {
   }
   .tableCenter-container {
     grid-column: 3/3;
-    margin-bottom:5rem;
+    margin-bottom: 5rem;
   }
   #centerSeat > div {
     height: 2rem;
