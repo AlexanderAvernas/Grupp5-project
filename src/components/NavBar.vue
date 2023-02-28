@@ -37,7 +37,9 @@ import { RouterLink, RouterView } from "vue-router";
               <RouterLink class="nav-link" to="/booking">Boka Bord</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/menu">Meny</RouterLink>
+              <RouterLink class="nav-link" to="/ordering"
+                >Beställ mat</RouterLink
+              >
             </li>
             <li class="nav-item dropdown">
               <a
