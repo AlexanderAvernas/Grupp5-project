@@ -21,11 +21,6 @@ const router = createRouter({
       name: "Quiz",
       component: QuizView,
     },
-    {
-      path: "/thank",
-      name: "thank",
-      component: ThankYou,
-    },
   ],
 });
 

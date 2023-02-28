@@ -56,7 +56,7 @@ import { RouterLink, RouterView } from "vue-router";
                   >
                 </li>
                 <li>
-                  <RouterLink class="nav-link" to="/thank">Om Oss</RouterLink>
+                  <RouterLink class="nav-link" to="/about">Om Oss</RouterLink>
                 </li>
               </ul>
             </li>
