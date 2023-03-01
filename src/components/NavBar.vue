@@ -53,12 +53,14 @@ import { RouterLink, RouterView } from "vue-router";
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <RouterLink class="nav-link" to="/contact"
-                    >Kontakt</RouterLink
+                  <RouterLink class="nav-link" to="/ThanksForOrdering"
+                    >Tack</RouterLink
                   >
                 </li>
                 <li>
-                  <RouterLink class="nav-link" to="/about">Om Oss</RouterLink>
+                  <RouterLink class="nav-link" to="/contact"
+                    >Kontakt</RouterLink
+                  >
                 </li>
               </ul>
             </li>
