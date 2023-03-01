@@ -1,6 +1,7 @@
 <script setup>
 import OrderNote from "../components/OrderNote.vue";
 import OrderMenu from "../components/OrderMenu.vue";
+import Footer from "../components/FooterPage.vue";
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import OrderMenu from "../components/OrderMenu.vue";
                 <button id="ordering-btn">VIDARE TILL KASSAN</button>
             </div>
         </div>
+        <Footer />
     </div>
 </template>
 
