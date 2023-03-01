@@ -1,3 +1,7 @@
+<script setup>
+import FooterPage from "./FooterPage.vue";
+</script>
+
 <template>
   <div class="background-image">
     <h1 class="kontakt">KONTAKT</h1>
@@ -51,6 +55,7 @@
       </div>
     </div>
   </div>
+  <FooterPage />
 </template>
 
 <style scoped>
@@ -74,35 +79,35 @@ h1 {
   text-align: center;
   font-style: normal;
   font-weight: 400;
-  font-size: 35px;
-  line-height: 47px;
+  font-size: 2.188;
+  line-height: 3rem;
   color: #ffffff;
 }
 
 .contact-text {
   position: absolute;
   width: 24vw;
-  height: 58px;
+  height: 3.625rem;
   left: 15.5vw;
   top: 21.5vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
   font-size: 0.8rem;
-  line-height: 16px;
+  line-height: 1rem;
   color: #ffffff;
 }
 .phone-number {
   position: absolute;
   width: fit-content;
-  height: 24px;
+  height: 1.5rem;
   left: 15.5vw;
   top: 32vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
   font-size: 1.125rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #ffffff;
 }
 
@@ -122,28 +127,28 @@ img {
 .open-text {
   position: absolute;
   width: 7.5rem;
-  height: 24px;
+  height: 1.5rem;
   left: 33vh;
   top: 56.5vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #fff;
 }
 .day-time1,
 .day-time2 {
   position: absolute;
   width: 10rem;
-  height: 41px;
+  height: 2.5rem;
   left: 15.55vw;
   top: 60vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 0.75rem;
+  line-height: 1rem;
   color: #ffffff;
 }
 .day-time2 {
@@ -151,15 +156,15 @@ img {
 }
 .label-text {
   position: absolute;
-  width: 117px;
+  width: 7.313rem;
   height: 24px;
   left: 55vw;
   top: 26.33vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   color: #ffffff;
 }
 textarea {
@@ -173,23 +178,22 @@ textarea {
 }
 .label-name {
   position: absolute;
-  width: 58px;
-  height: 24px;
+  width: 3.625rem;
+  height: 1.5rem;
   left: 55vw;
   top: 55vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   color: #ffffff;
 }
 input {
-  radius: 4px;
   position: absolute;
   width: 21rem;
   height: 1.7rem;
-  left: 60vw;
+  left: 59.5vw;
   top: 55vh;
   background: #d9d9d9;
   border-radius: 4px;
@@ -197,7 +201,7 @@ input {
 button {
   position: absolute;
   width: 8.125rem;
-  height: 54px;
+  height: 3.375rem;
   left: 60vw;
   top: 65vh;
   background: #221109;
@@ -207,23 +211,23 @@ button {
 }
 .google-text {
   position: absolute;
-  width: 143px;
-  height: 24px;
+  width: 9rem;
+  height: 1.5rem;
   left: 21vw;
   top: 73.66vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   color: #ffffff;
 }
 /* GOOGLE MAPS */
 .mapouter {
   position: absolute;
   text-align: center;
-  height: 123px;
-  width: 858px;
+  height: 7.688rem;
+  width: 53.625rem;
   top: 78vh;
   left: 20.52vw;
 }
@@ -240,7 +244,7 @@ button {
     left: 27vw;
     width: 12em;
     font-size: 1rem;
-    line-height: 20px;
+    line-height: 1.25rem;
     height: fit-content;
   }
   .phone-number {
