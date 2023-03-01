@@ -190,8 +190,8 @@ export default {
   margin: 20% auto;
   border: 10px solid;
   background-color: #1c1c1c;
-  height: 579px;
-  width: 799px;
+  height: 36rem;
+  width: 50rem;
   border-radius: 25px;
   place-content: center;
 }
@@ -200,7 +200,7 @@ export default {
   grid-column: 3 / 4;
   grid-row: 1;
   place-self: center;
-  height: 290px;
+  height: 18rem;
 }
 #centerSeat > div {
   border-radius: 100px;
@@ -214,13 +214,13 @@ export default {
   display: fleX;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 5;
 }
 div.tableCenterL-container > div:nth-child(1) > div {
-  width: 96px;
+  width: 6rem;
 }
 div.tableCenterL-container > div:nth-child(2) > div {
-  width: 96px;
+  width: 6rem;
 }
 /* TABLE LEFT START */
 .tableLeft-container {
@@ -229,10 +229,10 @@ div.tableCenterL-container > div:nth-child(2) > div {
   display: fleX;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 3.1rem;
 }
 .tableLeft-container > div:nth-child(3) > div {
-  height: 96px;
+  height: 6rem;
 }
 /* TABLE RIGHT START */
 .tablesRight-container {
@@ -242,7 +242,7 @@ div.tableCenterL-container > div:nth-child(2) > div {
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  margin-top: 90px;
+  margin-top: 5.6rem;
 }
 div.tablesRight-container > div:nth-child(1) {
   border-top: 6px solid #6e6e6e;
@@ -252,10 +252,10 @@ div.tablesRight-container > div:nth-child(2) {
   border-bottom: 6px solid #6e6e6e;
 }
 div.tablesRight-container > div:nth-child(1) > div {
-  width: 96px;
+  width: 6rem;
 }
 div.tablesRight-container > div:nth-child(2) > div {
-  width: 96px;
+  width: 6rem;
   text-align: center;
 }
 /* TABLE BOTTOM START */
@@ -266,10 +266,10 @@ div.tablesRight-container > div:nth-child(2) > div {
   grid-row: 2;
 }
 .seat {
-  height: 48px;
-  width: 48px;
-  left: 300px;
-  top: 636px;
+  height: 3rem;
+  width: 3rem;
+  left: 18.75rem;
+  top: 39.75rem;
   margin: 2em;
   border: 1px solid #ccc;
   text-align: center;
@@ -293,8 +293,8 @@ div.tablesRight-container > div:nth-child(2) > div {
 /* Background image */
 .background-image {
   background-image: url("../assets/pics/booking_page.jpg");
-  height: 1487px;
-  width: 100%;
+  height: 93rem;
+  width: 100vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -309,33 +309,33 @@ div.tablesRight-container > div:nth-child(2) > div {
 /* TEXT TILL BORDSBOKNING */
 .bordsbokning {
   position: absolute;
-  width: 305px;
-  height: 61px;
-  top: 62px;
+  width: 19rem;
+  height: 3.8rem;
+  top: 3.8rem;
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 35px;
-  line-height: 47px;
+  font-size: 2rem;
+  line-height: 2.9rem;
   color: #ffffff;
   text-align: center;
 }
 .text {
   position: absolute;
-  width: 499px;
-  top: 123px;
+  width: 31.1rem;
+  top: 7.6rem;
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
   text-align: center;
 
   color: #ffffff;
 }
 .input-container {
   display: flex;
-  height: 100px;
+  height: 6.25rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -343,13 +343,13 @@ div.tablesRight-container > div:nth-child(2) > div {
 .form {
   position: absolute;
   width: fit-content;
-  height: 31px;
-  top: 264px;
+  height: 1.9rem;
+  top: 16.5rem;
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.12rem;
+  line-height: 1.5rem;
   text-align: center;
   color: #ffffff;
 }
@@ -366,9 +366,9 @@ input {
 /* BUTTON VIDARE TILL MENY */
 button {
   position: absolute;
-  width: 247px;
-  height: 54px;
-  top: 1150px;
+  width: 15rem;
+  height: 3.3rem;
+  top: 71.7rem;
   color: #fff;
   background-color: #221109;
   border: 2px solid #ad8e6d;
@@ -376,8 +376,8 @@ button {
   font-family: "Amiko" sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.12rem;
+  line-height: 1.5rem;
 }
 button:hover {
   transform: scale(1.1);
@@ -387,9 +387,9 @@ button:hover {
   display: flex;
   position: absolute;
   width: 100%;
-  height: 52px;
+  height: 3.25rem;
 
-  top: 1435px;
+  top: 89.6rem;
   background: rgba(28, 28, 28, 0.8);
 }
 #item1 {
@@ -403,10 +403,10 @@ button:hover {
   margin: 0 0 0 auto;
 }
 .logo {
-  margin: 9px;
-  width: 23px;
-  height: 23px;
-  left: 1135px;
-  top: 1185px;
+  margin: 0.6rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  left: 71rem;
+  top: 74rem;
 }
 </style>
