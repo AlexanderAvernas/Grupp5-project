@@ -99,13 +99,18 @@
 }
 
 .plus{
-background-color: #1c1c1c;
-background-image: url(../assets/pics/logos/plus.png);
-background-size: cover;
-height: 25px;
-width: 1.5rem;
-border: 0;
-margin-left: 8px;
+    background-color: #1c1c1c;
+    background-image: url(../assets/pics/logos/plus.png);
+    background-size: cover;
+    height: 25px;
+    width: 1.5rem;
+    border: 0;
+    margin-left: 8px;
 }
 
+@media only screen and (max-width: 564px) {
+.menu-container {
+    width: 100%;
+}
+}
 </style>

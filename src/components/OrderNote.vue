@@ -39,4 +39,9 @@
     padding: 0;
 }
 
+@media only screen and (max-width: 446px) {
+.order-container {
+    width: 100%;
+}
+}
 </style>

@@ -30,56 +30,54 @@ import OrderMenu from "../components/OrderMenu.vue";
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
 
 .ordering-background {
-  background-image: url("../assets/pics/menu_page.jpg");
-  background-position: top center;
-
-
-  background-size: cover;
-  background-attachment: fixed;
+    background-image: url("../assets/pics/menu_page.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Rubrik */
 
 .h1-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #h1 {
-  position: absolute;
-  text-align: center;
-  width: 305px;
-  height: 61px;
-  top: 62px;
-  font-family: "Amiko", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 47px;
-  color: #ffffff;
+    position: absolute;
+    text-align: center;
+    width: 305px;
+    height: 61px;
+    top: 62px;
+    font-family: "Amiko", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 47px;
+    color: #ffffff;
 }
 
 #description {
-  position: absolute;
-  width: 499px;
-  top: 123px;
-  font-family: "Amiko", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  text-align: center;
-  color: #ffffff;
+    position: absolute;
+    width: 499px;
+    top: 123px;
+    font-family: "Amiko", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
 }
 
 /* Sidans innehåll */
 
 .content-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 17rem;
-  padding-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 17rem;
+    padding-bottom: 6rem;
 }
 
 /* Beställning */
@@ -124,6 +122,17 @@ import OrderMenu from "../components/OrderMenu.vue";
     flex-direction: column;
     align-items: center;
 }
+}
 
+@media only screen and (max-width: 499px) {
+
+#description{
+    width: auto;
+    padding: 10px;
+}
+
+.ordering-setup > p {
+    width: auto;
+}
 }
 </style>
