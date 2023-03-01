@@ -1,3 +1,8 @@
+<script setup>
+import OrderNote from "../components/OrderNote.vue";
+import OrderMenu from "../components/OrderMenu.vue";
+</script>
+
 <template>
     <div class="ordering-background">
         <div class="h1-container">
@@ -10,29 +15,25 @@
             </div>
         </div>
         <div class="content-container">
-        <div class="menu-container">
-            <h2>Meny</h2>
+            <OrderMenu />
+            <div class="ordering-setup">
+                <OrderNote />
+                <p>Önskas något mer under besöket så går det självklart bra att göra ytterligare beställningar med våra servitriser på plats.</p>
+                <button id="ordering-btn">VIDARE TILL KASSAN</button>
+            </div>
         </div>
-      <div class="ordering-setup">
-          <div class="order-container">
-              <h2>BESTÄLLNING</h2>
-          </div>
-          <p>Önskas något mer under besöket så går det självklart bra att göra ytterligare beställningar med våra servitriser på plats.</p>
-          <button id="ordering-btn">VIDARE TILL KASSAN</button>
-      </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+
 .ordering-background {
   background-image: url("../assets/pics/menu_page.jpg");
   background-position: top center;
 
-  height: 1156px;
-  width: 100%;
+
   background-size: cover;
   background-attachment: fixed;
 }
@@ -78,40 +79,10 @@
   display: flex;
   justify-content: center;
   margin-top: 17rem;
+  padding-bottom: 6rem;
 }
 
-.menu-container {
-  background-color: #1c1c1c;
-  color: #ffffff;
-  font-family: "Cutive Mono", monospace;
-  width: 564px;
-  height: 722px;
-  margin: 1.5rem;
-  overflow: scroll;
-}
-
-.menu-container > h2 {
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    margin-top: 8vh;
-}
-
-.order-container {
-    background-color: #d9d9d9;
-    color: #1c1c1c;
-    width: 446px;
-    height: 503px;
-    margin: 1.5rem;
-}
-
-.order-container > h2 {
-    display: flex;
-    justify-content: center;
-    font-family: "Amiko", sans-serif;
-    font-size: 30px;
-    margin-top: 5vh;
-}
+/* Beställning */
 
 .ordering-setup{
     display: flex;
