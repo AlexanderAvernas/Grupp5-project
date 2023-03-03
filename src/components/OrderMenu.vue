@@ -7,6 +7,7 @@ export default {
         this.appetizers = result[0].pre;
         this.mains = result[0].main;
         this.deserts = result[0].desert;
+        this.drinks = result[0].drink;
       });
   },
   data() {
@@ -14,6 +15,7 @@ export default {
       appetizers: null,
       mains: null,
       deserts: null,
+      drinks: null,
     };
   },
 };
@@ -43,6 +45,14 @@ export default {
       <li class="menu-li" v-for="desert in deserts" :key="desert.id">
         <p class="product">{{ desert.product }}</p>
         <p class="price">{{ desert.price }}kr</p>
+        <button class="plus"></button>
+      </li>
+    </ul>
+    <h3>Drycker</h3>
+    <ul class="menu-ul">
+      <li class="menu-li" v-for="drink in drinks" :key="drink.id">
+        <p class="product">{{ drink.product }}</p>
+        <p class="price">{{ drink.price }}kr</p>
         <button class="plus"></button>
       </li>
     </ul>
