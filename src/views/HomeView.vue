@@ -3,7 +3,7 @@ import FoodMenu from "../components/FoodMenu.vue";
 </script>
 
 <template>
-    <!-- Left side of screen -->
+  <!-- Left side of screen -->
   <div class="landing-page">
     <h1 class="landing-title">Lorem Ipsum</h1>
     <button class="landing-btn">BOKA BORD</button>
