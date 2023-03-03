@@ -1,59 +1,55 @@
 <script>
-
-   export default {
-    created() {
-      fetch("/menu.json")
-        .then(response => response.json())
-        .then(result => {
-          this.appetizers = result[0].pre
-          this.mains = result[0].main
-          this.deserts = result[0].desert
-        })
-    },
-    data() {
-      return {
-        appetizers: null,
-        mains: null,
-        deserts: null
-      }
-    },
-
-  }
-
+export default {
+  created() {
+    fetch("/menu.json")
+      .then((response) => response.json())
+      .then((result) => {
+        this.appetizers = result[0].pre;
+        this.mains = result[0].main;
+        this.deserts = result[0].desert;
+      });
+  },
+  data() {
+    return {
+      appetizers: null,
+      mains: null,
+      deserts: null,
+    };
+  },
+};
 </script>
 
 <template>
-    <div class="menu-container">
-        <h2>Meny</h2>
-        <h3>Förrätter</h3>
-        <ul class="menu-ul">
-            <li  class="menu-li" v-for="appetizer in appetizers">
-                <p class="product">{{appetizer.product}}</p>
-                <p class="price">{{appetizer.price}}kr</p>
-                <button class="plus"></button>
-            </li>
-        </ul>
-        <h3>Varmrätter</h3>
-        <ul class="menu-ul">
-            <li  class="menu-li" v-for="main in mains">
-                <p class="product">{{main.product}}</p>
-                <p class="price">{{main.price}}kr</p>
-                <button class="plus"></button>
-            </li>
-        </ul>
-        <h3>Deserter</h3>
-        <ul class="menu-ul">
-            <li  class="menu-li" v-for="desert in deserts">
-                <p class="product">{{desert.product}}</p>
-                <p class="price">{{desert.price}}kr</p>
-                <button class="plus"></button>
-            </li>
-        </ul>
-    </div>
+  <div class="menu-container">
+    <h2>Meny</h2>
+    <h3>Förrätter</h3>
+    <ul class="menu-ul">
+      <li class="menu-li" v-for="appetizer in appetizers">
+        <p class="product">{{ appetizer.product }}</p>
+        <p class="price">{{ appetizer.price }}kr</p>
+        <button class="plus"></button>
+      </li>
+    </ul>
+    <h3>Varmrätter</h3>
+    <ul class="menu-ul">
+      <li class="menu-li" v-for="main in mains">
+        <p class="product">{{ main.product }}</p>
+        <p class="price">{{ main.price }}kr</p>
+        <button class="plus"></button>
+      </li>
+    </ul>
+    <h3>Deserter</h3>
+    <ul class="menu-ul">
+      <li class="menu-li" v-for="desert in deserts">
+        <p class="product">{{ desert.product }}</p>
+        <p class="price">{{ desert.price }}kr</p>
+        <button class="plus"></button>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
-
 .menu-container {
   background-color: #1c1c1c;
   color: #ffffff;
@@ -67,50 +63,50 @@
 }
 
 .menu-container > h2 {
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    margin-top: 3vh;
-    margin-bottom: 2vh;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
 }
 
 .menu-container > h3 {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 20px;
 }
 
-.menu-ul{
-    list-style: none;
-    font-size: 20px;
-    padding: 0;
+.menu-ul {
+  list-style: none;
+  font-size: 20px;
+  padding: 0;
 }
 
-.menu-li{
-    display: flex;
-    justify-content: center;
-    margin: .8rem 0 0 0;
-    height: 1.5rem;
+.menu-li {
+  display: flex;
+  justify-content: center;
+  margin: 0.8rem 0 0 0;
+  height: 1.5rem;
 }
 
-.product{
-    width: 60%;
+.product {
+  width: 60%;
 }
 
-.plus{
-    background-color: #1c1c1c;
-    background-image: url(../assets/pics/logos/plus.png);
-    background-size: cover;
-    height: 25px;
-    width: 1.5rem;
-    border: 0;
-    margin-left: 8px;
+.plus {
+  background-color: #1c1c1c;
+  background-image: url(../assets/pics/logos/plus.png);
+  background-size: cover;
+  height: 25px;
+  width: 1.5rem;
+  border: 0;
+  margin-left: 8px;
 }
 
 @media only screen and (max-width: 564px) {
-.menu-container {
+  .menu-container {
     width: 100%;
-}
+  }
 }
 </style>
