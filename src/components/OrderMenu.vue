@@ -24,7 +24,7 @@ export default {
     <h2>Meny</h2>
     <h3>Förrätter</h3>
     <ul class="menu-ul">
-      <li class="menu-li" v-for="appetizer in appetizers">
+      <li class="menu-li" v-for="appetizer in appetizers" :key="appetizer.id">
         <p class="product">{{ appetizer.product }}</p>
         <p class="price">{{ appetizer.price }}kr</p>
         <button class="plus"></button>
@@ -32,7 +32,7 @@ export default {
     </ul>
     <h3>Varmrätter</h3>
     <ul class="menu-ul">
-      <li class="menu-li" v-for="main in mains">
+      <li class="menu-li" v-for="main in mains" :key="main.id">
         <p class="product">{{ main.product }}</p>
         <p class="price">{{ main.price }}kr</p>
         <button class="plus"></button>
@@ -40,7 +40,7 @@ export default {
     </ul>
     <h3>Deserter</h3>
     <ul class="menu-ul">
-      <li class="menu-li" v-for="desert in deserts">
+      <li class="menu-li" v-for="desert in deserts" :key="desert.id">
         <p class="product">{{ desert.product }}</p>
         <p class="price">{{ desert.price }}kr</p>
         <button class="plus"></button>
