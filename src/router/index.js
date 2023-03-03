@@ -33,7 +33,6 @@ const router = createRouter({
       name: "CheckoutPage",
       component: () => import("../views/CheckoutView.vue"),
     },
-   
   ],
 });
 

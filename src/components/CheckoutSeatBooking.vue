@@ -81,7 +81,7 @@ p {
   cursor: pointer;
 }
 .booking__container {
-    border-radius: 10px;
+  border-radius: 10px;
   margin-bottom: 47px;
   width: 100%;
   max-width: 674px;

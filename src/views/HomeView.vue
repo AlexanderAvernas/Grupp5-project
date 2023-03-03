@@ -3,6 +3,7 @@ import FoodMenu from "../components/FoodMenu.vue";
 </script>
 
 <template>
+    <!-- Left side of screen -->
   <div class="landing-page">
     <h1 class="landing-title">Lorem Ipsum</h1>
     <button class="landing-btn">BOKA BORD</button>
@@ -11,6 +12,7 @@ import FoodMenu from "../components/FoodMenu.vue";
       är redo när kunden väl är framme bla bla bla och mer bla
     </p>
   </div>
+  <!-- Right side of screen -->
   <FoodMenu />
 </template>
 
@@ -70,6 +72,7 @@ import FoodMenu from "../components/FoodMenu.vue";
   color: #fff;
 }
 
+/* For mobile screens */
 @media screen and (max-width: 440px) {
   .landing-page {
     width: 100vw;

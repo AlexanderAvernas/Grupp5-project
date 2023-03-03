@@ -252,7 +252,7 @@ div.tablesRight-container > div:nth-child(2) {
   border-bottom: 6px solid #6e6e6e;
 }
 div.tablesRight-container > div:nth-child(1) > div {
-  width: 96px;
+  width: 6rem;
 }
 div.tablesRight-container > div:nth-child(2) > div {
   width: 6rem;
@@ -487,9 +487,9 @@ button:hover {
   display: flex;
   position: absolute;
   width: 100%;
-  height: 52px;
+  height: 3.25rem;
 
-  top: 1435px;
+  top: 89.6rem;
   background: rgba(28, 28, 28, 0.8);
 }
 #item1 {
