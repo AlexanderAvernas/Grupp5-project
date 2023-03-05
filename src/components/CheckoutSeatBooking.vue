@@ -150,8 +150,8 @@
         <div class="checkbox__container">
           <input type="checkbox" />
           <div class="checkbox__paras">
-            <p class="checkbox__para para__top">BANKÖVERFÖRING</p>
-            <p class="checkbox__para para__bot">Betala direkt</p>
+            <p class="checkbox__para para__top">Klarna Faktura</p>
+            <p class="checkbox__para para__bot">Ät nu - betala sen</p>
           </div>
         </div>
         <div class="checkbox__method">
