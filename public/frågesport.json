@@ -5,7 +5,8 @@
         "svar": "8",
         "felsvar1": "9",
         "felsvar2": "0",
-        "felsvar3": "10"
+        "felsvar3": "10",
+        "selected": "null"
     },
     {
         "id": "2",
@@ -13,7 +14,8 @@
         "svar": "döden",
         "felsvar1": "kattens vän",
         "felsvar2": "varg med attityd",
-        "felsvar3": "god hjälte"
+        "felsvar3": "god hjälte",
+        "selected": "null"
     },
     {
         "id": "3",
@@ -21,7 +23,8 @@
         "svar": "Beethoven",
         "felsvar1": "Mozart",
         "felsvar2": "Bach",
-        "felsvar3": "Händel"
+        "felsvar3": "Händel",
+        "selected": "null"
     },
     {
         "id": "4",
@@ -29,7 +32,8 @@
         "svar": "dags att ta friskluft",
         "felsvar1": "jag är nöjd",
         "felsvar2": "inget nytt",
-        "felsvar3": "nu behöver jag hammare"
+        "felsvar3": "jag behöver hammare",
+        "selected": "null"
     },
     {
         "id": "5",
@@ -37,7 +41,8 @@
         "svar": "richard",
         "felsvar1": "random matte lärare",
         "felsvar2": "random historia lärare",
-        "felsvar3": "random språk lärare"
+        "felsvar3": "random språk lärare",
+        "selected": "null"
     }
 
 ]

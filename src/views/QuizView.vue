@@ -1,49 +1,62 @@
 <script setup>
 import QuizComp from "../components/QuizComp.vue";
+import QuizResult from "../components/QuizResult.vue";
 </script>
 
 <template>
-  <QuizComp
-    v-for="quiz in quizes"
-    :key="quiz.id"
-    :quiz="quiz"
-    @counted="counted1"
-  >
-  </QuizComp>
+  <div id="cardquiz">
+    <QuizComp> </QuizComp>
+    <QuizResult></QuizResult>
+  </div>
+  <div class="container text-center">
+    <div class="d-flex justify-content-center">
+      <div class="d-flex align-items-center"></div>
+    </div>
+  </div>
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   data() {
     return {
-      count: 1,
-      quizes: [],
+      value: null,
+      count: null,
     };
   },
 
-  mounted() {
-    this.fetchData();
-    console.log(this.filterQuiz);
-  },
-
   methods: {
-    async fetchData() {
-      const response = await axios.get("frågesport.json");
-      const result = await response.data;
-      this.quizes = result;
-    },
-
-    counted1() {
-      this.count += 1;
-    },
-  },
-
-  computed: {
-    filterQuiz() {
-      return this.quizes.filter((quiz) => quiz.id === this.count);
+    counted1(value, count) {
+      this.value = value;
+      this.count = count;
     },
   },
 };
 </script>
+
+<style>
+body {
+  background: url(../assets/pics/quiz_page.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+#card {
+  background: #1c1c1c;
+  width: 744px;
+  height: 449px;
+  border: 2px solid #6e6e6e;
+  border-radius: 26px;
+}
+
+#cardquiz {
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  display: grid;
+}
+
+#col {
+  margin: auto;
+}
+</style>
