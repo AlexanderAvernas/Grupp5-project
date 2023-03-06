@@ -458,16 +458,4 @@ button:hover {
     width: 2rem;
   }
 }
-
-    padding-top: 19.5rem;
-    height: 19.75rem;
-  }
-}
-.logo {
-  margin: 9px;
-  width: 23px;
-  height: 23px;
-  left: 1135px;
-  top: 1185px;
-} */
 </style>

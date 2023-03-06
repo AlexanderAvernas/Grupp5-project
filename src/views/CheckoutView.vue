@@ -14,7 +14,6 @@ import Footer from "../components/FooterPage.vue";
 </template>
 <style>
 #checkoutPage {
- 
   width: 100vw;
   overflow: hidden;
   background-image: url(../assets/pics/checkout_page.jpg);
