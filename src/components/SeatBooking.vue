@@ -230,7 +230,7 @@ div.tablesRight-container > div:nth-child(2) {
   border-bottom: 6px solid #6e6e6e;
 }
 div.tablesRight-container > div:nth-child(1) > div {
-  width: 96px;
+  width: 6rem;
 }
 div.tablesRight-container > div:nth-child(2) > div {
   width: 6rem;
@@ -457,11 +457,17 @@ button:hover {
     height: 2rem;
     width: 2rem;
   }
-  .input-container {
-    margin: fit-content;
+}
 
     padding-top: 19.5rem;
     height: 19.75rem;
   }
 }
+.logo {
+  margin: 9px;
+  width: 23px;
+  height: 23px;
+  left: 1135px;
+  top: 1185px;
+} */
 </style>

@@ -133,7 +133,7 @@ img {
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.12rem;
   line-height: 1.5rem;
   color: #fff;
 }
@@ -157,7 +157,7 @@ img {
 .label-text {
   position: absolute;
   width: 7.313rem;
-  height: 24px;
+  height: 1.5rem;
   left: 55vw;
   top: 26.33vh;
   font-family: "Amiko";
@@ -169,12 +169,12 @@ img {
 }
 textarea {
   position: absolute;
-  width: 411px;
+  width: 25.6rem;
   height: 22vh;
   left: 55vw;
   top: 31vh;
   background: #d9d9d9;
-  border-radius: 10px;
+  border-radius: 0.6rem;
 }
 .label-name {
   position: absolute;
@@ -196,7 +196,7 @@ input {
   left: 59.5vw;
   top: 55vh;
   background: #d9d9d9;
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 button {
   position: absolute;
@@ -207,7 +207,7 @@ button {
   background: #221109;
   color: #fff;
   border: 2px solid #ad8e6d;
-  border-radius: 27px;
+  border-radius: 1.68rem;
 }
 .google-text {
   position: absolute;
@@ -300,8 +300,8 @@ button {
     left: 10vw;
   }
   .mapouter {
-    height: 123px;
-    width: 140px;
+    height: 7.68rem;
+    width: 8.75rem;
     top: 130vh;
     left: 11.52vw;
   }
