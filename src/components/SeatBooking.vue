@@ -15,11 +15,26 @@
     <div class="input-container">
       <form class="form">
         <label for="date">Datum:</label>
-        <input type="date" name="date" value="" />
+        <input
+          v-model="date"
+          @input="$store.commit('updateDate', this.date)"
+          type="date"
+          name="date"
+        />
         <label for="time">TID:</label>
-        <input type="time" step="3600000" name="time" value="14:00" />
+        <input
+          @input="$store.commit('updateTime', this.time)"
+          v-model="time"
+          type="time"
+          step="3600000"
+          name="time"
+        />
         <label for="guests">Antal:</label>
-        <select v-model="selectedOption" name="guests">
+        <select
+          @click="$store.commit('updateGuests', this.selectedOption)"
+          v-model="selectedOption"
+          name="guests"
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -105,12 +120,16 @@
       <button type="button">VIDARE TILL MENYN</button>
     </div>
   </div>
+  <h4>{{ $store.state.date }}</h4>
+  <h4>{{ $store.state.time }}</h4>
+  <h4>{{ $store.state.guests }}</h4>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      guest: "",
       tablesLeft: [
         { id: 1, available: true },
         { id: 2, available: true },
