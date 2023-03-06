@@ -15,11 +15,26 @@
     <div class="input-container">
       <form class="form">
         <label for="date">Datum:</label>
-        <input type="date" name="date" value="" />
+        <input
+          type="date"
+          name="date"
+          v-model="date"
+          @input="updateFormValues('date', date)"
+        />
         <label for="time">TID:</label>
-        <input type="time" step="3600000" name="time" value="14:00" />
+        <input
+          type="time"
+          step="3600000"
+          name="time"
+          v-model="time"
+          @input="updateFormValues('time', time)"
+        />
         <label for="guests">Antal:</label>
-        <select v-model="selectedOption" name="guests">
+        <select
+          v-model="selectedOption"
+          name="guests"
+          @input="updateFormValues('guests', selectedOption)"
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -176,6 +191,10 @@ export default {
         seat.available = false;
         alert("Not available");
       }
+    },
+    //Vuex
+    updateFormValues(field, value) {
+      this.$store.commit("updateFormValues", { field, value });
     },
   },
 };

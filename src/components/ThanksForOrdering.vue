@@ -25,7 +25,29 @@
       alt="tiktok-logo"
     />
   </div>
+  
+  <p> {{ date }} </p>
+  <p> {{ time }} </p>
+  <p> {{ guests }} </p>
 </template>
+
+<script>
+//Vuex
+export default {
+  data() {
+    return {
+      date: "",
+      time: "",
+      guests: "",
+    };
+  },
+  created() {
+    this.date = this.$store.state.formValues.date;
+    this.time = this.$store.state.formValues.time;
+    this.guests = this.$store.state.formValues.guests;
+  },
+};
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
