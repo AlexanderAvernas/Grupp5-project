@@ -1,6 +1,5 @@
 <script setup>
 import QuizComp from "../components/QuizComp.vue";
-import QuizResult from "../components/QuizResult.vue";
 </script>
 
 <template>
