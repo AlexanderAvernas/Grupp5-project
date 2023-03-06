@@ -9,19 +9,49 @@ import { RouterLink, RouterView } from "vue-router";
         <img src="" class="card-img-top" />
         <div id="quiztext" class="card-body">
           <h5 class="card-title">{{ quiz.fråga }}</h5>
-          <a id="button1" class="btn" @click="model(quiz.svar)">
+          <a
+            a
+            id="button1"
+            class="btn btn-primary"
+            :class="{ a: !clicked }"
+            @click="
+              model(quiz.svar);
+              clicked = !clicked;
+            "
+          >
             {{ quiz.svar }}</a
           >
 
-          <a id="button2" class="btn" @click="model(quiz.felsvar1)">{{
-            quiz.felsvar1
-          }}</a>
-          <a id="button3" class="btn" @click="model(quiz.felsvar2)">{{
-            quiz.felsvar2
-          }}</a>
-          <a id="button4" class="btn" @click="model(quiz.felsvar3)">{{
-            quiz.felsvar3
-          }}</a>
+          <a
+            id="button2"
+            :class="{ a: !clicked1 }"
+            class="btn"
+            @click="
+              model(quiz.felsvar1);
+              clicked1 = !clicked1;
+            "
+            >{{ quiz.felsvar1 }}</a
+          >
+          <a
+            id="button3"
+            :class="{ a: !clicked2 }"
+            class="btn"
+            @click="
+              model(quiz.felsvar2);
+              clicked2 = !clicked2;
+            "
+            >{{ quiz.felsvar2 }}</a
+          >
+          <a
+            id="button4"
+            :class="{ a: !clicked3 }"
+            class="btn"
+            @click="
+              model(quiz.felsvar3);
+              clicked3 = !clicked3;
+            "
+            >{{ quiz.felsvar3 }}</a
+          >
           <h4
             class="btn"
             v-on:click="
@@ -45,7 +75,7 @@ import { RouterLink, RouterView } from "vue-router";
           Du har svarat rätt på {{ value }} frågor! <br />
           Vi har nu dragit av {{ count }} kr av din beställning
         </p>
-        <a id="route" class="btn">
+        <a id="route" :class="{ a: !clicked }" class="btn">
           <RouterLink class="nav-link" to="/">TILLBAKA TILL KASSAN</RouterLink>
         </a>
       </div>
@@ -66,6 +96,9 @@ export default {
       value: 0,
       selected: null,
       clicked: false,
+      clicked1: false,
+      clicked2: false,
+      clicked3: false,
     };
   },
 
@@ -96,6 +129,10 @@ export default {
 
     next: function () {
       this.questionIndex++;
+      this.clicked = false;
+      this.clicked1 = false;
+      this.clicked2 = false;
+      this.clicked3 = false;
     },
 
     prev: function () {
@@ -129,6 +166,7 @@ export default {
   grid-row-start: 3;
   grid-row-end: 4;
   width: 10px;
+  background-color: #221109;
 }
 
 #quiztext {
@@ -163,11 +201,23 @@ export default {
   width: 15rem;
   height: 3rem;
   color: #fff;
+  background-color: #492717;
+  border: 2px solid #ad8e6d;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+#quiztext > .a {
+  justify-self: center;
+  align-self: center;
+  position: relative;
+  width: 15rem;
+  height: 3rem;
+  color: #fff;
   background-color: #221109;
   border: 2px solid #ad8e6d;
   border-radius: 30px;
   font-size: 20px;
-  justify-content: space-between;
 }
 
 #quiztext > a:hover {

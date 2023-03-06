@@ -29,10 +29,10 @@
     {
         "id": "4",
         "fråga": "vad känner programmerare efter lång dag med kod som hade massa bugger och äntligen blev färdig",
-        "svar": "dags att ta friskluft",
-        "felsvar1": "jag är nöjd",
+        "svar": "jag behöver hammare",
+        "felsvar1":"dags att ta friskluft",
         "felsvar2": "inget nytt",
-        "felsvar3": "jag behöver hammare",
+        "felsvar3": "jag är nöjd",
         "selected": "null"
     },
     {
