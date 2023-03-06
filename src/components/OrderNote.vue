@@ -4,7 +4,8 @@
   <div class="order-container">
     <h2>BESTÄLLNING</h2>
     <ul id="order-list">
-      <li id="order-item">Lorem ipsum x2</li>
+      <li id="order-item">{{ $store.state.food.product }}</li>
+      <li id="order-item">{{ $store.state.food.price }}kr</li>
     </ul>
   </div>
 </template>
@@ -37,6 +38,10 @@
   font-size: 30px;
   margin-top: 1.5rem;
   padding: 0;
+}
+
+#order-item {
+  padding: 1rem;
 }
 
 @media only screen and (max-width: 446px) {

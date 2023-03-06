@@ -29,7 +29,15 @@ export default {
       <li class="menu-li" v-for="appetizer in appetizers" :key="appetizer.id">
         <p class="product">{{ appetizer.product }}</p>
         <p class="price">{{ appetizer.price }}kr</p>
-        <button class="plus"></button>
+        <button
+          @click="
+            $store.commit('addItem', {
+              product: appetizer.product,
+              price: appetizer.price,
+            })
+          "
+          class="plus"
+        ></button>
       </li>
     </ul>
     <h3>Varmrätter</h3>
@@ -37,7 +45,15 @@ export default {
       <li class="menu-li" v-for="main in mains" :key="main.id">
         <p class="product">{{ main.product }}</p>
         <p class="price">{{ main.price }}kr</p>
-        <button class="plus"></button>
+        <button
+          @click="
+            $store.commit('addItem', {
+              product: main.product,
+              price: main.price,
+            })
+          "
+          class="plus"
+        ></button>
       </li>
     </ul>
     <h3>Deserter</h3>
@@ -45,7 +61,15 @@ export default {
       <li class="menu-li" v-for="desert in deserts" :key="desert.id">
         <p class="product">{{ desert.product }}</p>
         <p class="price">{{ desert.price }}kr</p>
-        <button class="plus"></button>
+        <button
+          @click="
+            $store.commit('addItem', {
+              product: desert.product,
+              price: desert.price,
+            })
+          "
+          class="plus"
+        ></button>
       </li>
     </ul>
     <h3>Drycker</h3>
@@ -53,7 +77,15 @@ export default {
       <li class="menu-li" v-for="drink in drinks" :key="drink.id">
         <p class="product">{{ drink.product }}</p>
         <p class="price">{{ drink.price }}kr</p>
-        <button class="plus"></button>
+        <button
+          @click="
+            $store.commit('addItem', {
+              product: drink.product,
+              price: drink.price,
+            })
+          "
+          class="plus"
+        ></button>
       </li>
     </ul>
   </div>

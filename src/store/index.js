@@ -2,12 +2,16 @@ import { createStore } from "vuex";
 
 const store = createStore({
   state: {
-    counter: 0,
+    food: {
+      product: null,
+      price: null,
+    },
   },
 
   mutations: {
-    increment(state) {
-      state.counter += 1;
+    addItem(state, items) {
+      state.food.product = items.product;
+      state.food.price = items.price;
     },
   },
 
