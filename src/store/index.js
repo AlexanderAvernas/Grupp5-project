@@ -6,12 +6,23 @@ const store = createStore({
       product: null,
       price: null,
     },
+    date: "",
+    time: "",
+    guests: "",
   },
 
   mutations: {
-    addItem(state, items) {
-      state.food.product = items.product;
-      state.food.price = items.price;
+    increment(state, amount) {
+      state.counter += amount;
+    },
+    updateDate(state, payload) {
+      state.date = payload;
+    },
+    updateTime(state, payload) {
+      state.time = payload;
+    },
+    updateGuests(state, payload) {
+      state.guests = payload;
     },
   },
 
