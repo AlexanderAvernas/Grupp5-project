@@ -56,8 +56,17 @@ import FooterPage from "./FooterPage.vue";
     </div>
   </div>
   <FooterPage />
+  <h4>{{ $store.state.date }}</h4>
+  <h4>{{ $store.state.time }}</h4>
+  <h4>{{ $store.state.guests }}</h4>
 </template>
-
+<script>
+export default {
+  data() {
+    return { date: 0 };
+  },
+};
+</script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Amiko&display=swap");
 /* Background image */
@@ -86,14 +95,14 @@ h1 {
 
 .contact-text {
   position: absolute;
-  width: 24vw;
+  width: 26vw;
   height: 3.625rem;
   left: 15.5vw;
-  top: 21.5vh;
+  top: 20vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1rem;
   color: #ffffff;
 }
@@ -102,7 +111,7 @@ h1 {
   width: fit-content;
   height: 1.5rem;
   left: 15.5vw;
-  top: 32vh;
+  top: 3vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
@@ -133,7 +142,7 @@ img {
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.12rem;
   line-height: 1.5rem;
   color: #fff;
 }
@@ -157,7 +166,7 @@ img {
 .label-text {
   position: absolute;
   width: 7.313rem;
-  height: 24px;
+  height: 1.5rem;
   left: 55vw;
   top: 26.33vh;
   font-family: "Amiko";
@@ -169,12 +178,12 @@ img {
 }
 textarea {
   position: absolute;
-  width: 411px;
+  width: 25.6rem;
   height: 22vh;
   left: 55vw;
   top: 31vh;
   background: #d9d9d9;
-  border-radius: 10px;
+  border-radius: 0.6rem;
 }
 .label-name {
   position: absolute;
@@ -196,7 +205,7 @@ input {
   left: 59.5vw;
   top: 55vh;
   background: #d9d9d9;
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 button {
   position: absolute;
@@ -207,7 +216,7 @@ button {
   background: #221109;
   color: #fff;
   border: 2px solid #ad8e6d;
-  border-radius: 27px;
+  border-radius: 1.68rem;
 }
 .google-text {
   position: absolute;
@@ -229,10 +238,10 @@ button {
   height: 7.688rem;
   width: 53.625rem;
   top: 78vh;
-  left: 20.52vw;
+  left: 13vw;
 }
 #gmap_canvas {
-  width: 55.85vw;
+  width: 69vw;
 }
 
 @media screen and (max-width: 600px) {
@@ -300,8 +309,8 @@ button {
     left: 10vw;
   }
   .mapouter {
-    height: 123px;
-    width: 140px;
+    height: 7.68rem;
+    width: 8.75rem;
     top: 130vh;
     left: 11.52vw;
   }

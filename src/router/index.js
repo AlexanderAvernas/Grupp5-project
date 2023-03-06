@@ -28,6 +28,11 @@ const router = createRouter({
       name: "ContactPage",
       component: () => import("../components/ContactPage.vue"),
     },
+    {
+      path: "/checkout",
+      name: "CheckoutPage",
+      component: () => import("../views/CheckoutView.vue"),
+    },
   ],
 });
 

@@ -3,16 +3,23 @@ import { createStore } from "vuex";
 const store = createStore({
   state: {
     counter: 0,
-    formValues: {
-      date: "",
-      time: "",
-      guests: "",
-    },
+    date: "",
+    time: "",
+    guests: "",
   },
 
   mutations: {
-    increment(state) {
-      state.counter += 1;
+    increment(state, amount) {
+      state.counter += amount;
+    },
+    updateDate(state, payload) {
+      state.date = payload;
+    },
+    updateTime(state, payload) {
+      state.time = payload;
+    },
+    updateGuests(state, payload) {
+      state.guests = payload;
     },
     updateFormValues(state, payload) {
       state.formValues[payload.field] = payload.value;
