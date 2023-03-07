@@ -8,6 +8,7 @@ import { RouterLink, RouterView } from "vue-router";
       <div id="card" class="card" style="width: 10">
         <img src="" class="card-img-top" />
         <div id="quiztext" class="card-body">
+          <h1>Fråga {{ question }}</h1>
           <h5 class="card-title">{{ quiz.fråga }}</h5>
           <a
             a
@@ -94,6 +95,7 @@ export default {
       quizes: [],
       questionIndex: 0,
       value: 0,
+      question: 1,
       selected: null,
       clicked: false,
       clicked1: false,
@@ -133,10 +135,12 @@ export default {
       this.clicked1 = false;
       this.clicked2 = false;
       this.clicked3 = false;
+      this.question++;
     },
 
     prev: function () {
       this.questionIndex--;
+      this.question--;
     },
   },
 };
@@ -254,5 +258,11 @@ export default {
   position: relative;
   right: 50px;
   bottom: 10px;
+}
+
+#quiztext > h1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  font-size: 18px;
 }
 </style>
