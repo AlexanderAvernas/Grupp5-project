@@ -38,6 +38,9 @@
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
       </form>
     </div>
@@ -123,6 +126,7 @@
   <h4>{{ $store.state.date }}</h4>
   <h4>{{ $store.state.time }}</h4>
   <h4>{{ $store.state.guests }}</h4>
+  <h4>{{ selectedOption }}</h4>
 </template>
 
 <script>
@@ -138,7 +142,7 @@ export default {
       tablesCenterL: [
         { id: 4, available: true },
         { id: 5, available: true },
-        { id: 6, available: false },
+        { id: 6, available: true },
       ],
       tablesCenter: [
         { id: 7, available: true },
@@ -146,7 +150,7 @@ export default {
         { id: 9, available: true },
       ],
       tablesRight: [
-        { id: 10, available: false },
+        { id: 10, available: true },
         { id: 11, available: true },
       ],
       tablesBottom: [
@@ -154,14 +158,57 @@ export default {
         { id: 13, available: true },
       ],
       selectedOption: 0,
+      value: 0,
     };
   },
   watch: {
-    selectedOption(val) {
-      if (val === 1) {
-        this.tablesRight[1].available = true;
-      } else {
+    selectedOption(value) {
+      if (value == 1) {
+        this.tablesRight[0].available = false;
         this.tablesRight[1].available = false;
+        this.tablesLeft[2].available = false;
+        this.tablesCenterL[0].available = false;
+        this.tablesCenterL[1].available = false;
+        this.tablesBottom[0].available = true;
+        this.tablesBottom[1].available = true;
+      }
+      if (value == 2) {
+        this.tablesRight[0].available = false;
+        this.tablesRight[1].available = false;
+        this.tablesLeft[2].available = false;
+        this.tablesCenterL[0].available = false;
+        this.tablesCenterL[1].available = false;
+        this.tablesBottom[0].available = true;
+        this.tablesBottom[1].available = true;
+        this.tablesCenter[0].available = true;
+        this.tablesCenter[1].available = true;
+        this.tablesCenter[2].available = true;
+        this.tablesCenterL[2].available = true;
+      }
+      if (value == 4) {
+        this.tablesRight[0].available = true;
+        this.tablesRight[1].available = true;
+        this.tablesLeft[2].available = true;
+        this.tablesCenter[0].available = true;
+        this.tablesCenter[1].available = true;
+        this.tablesCenter[2].available = true;
+        this.tablesLeft[0].available = true;
+        this.tablesLeft[1].available = true;
+        this.tablesCenterL[0].available = true;
+        this.tablesCenterL[1].available = true;
+        this.tablesCenterL[2].available = true;
+        this.tablesBottom[0].available = false;
+        this.tablesBottom[1].available = false;
+      }
+      if (value == 5) {
+        this.tablesCenter[0].available = false;
+        this.tablesCenter[1].available = false;
+        this.tablesCenter[2].available = false;
+        this.tablesCenterL[2].available = false;
+        this.tablesLeft[0].available = false;
+        this.tablesLeft[1].available = false;
+        this.tablesBottom[0].available = false;
+        this.tablesBottom[1].available = false;
       }
     },
   },
