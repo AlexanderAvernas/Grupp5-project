@@ -1,4 +1,6 @@
-<script></script>
+<script>
+</script>
+
 <template>
   <div class="booking__container">
     <h1 class="booking__title">Bordsbokning:</h1>
@@ -17,42 +19,17 @@
   <div class="booking__container minimum__height">
     <h1 class="booking__title">beställning:</h1>
     <div class="booking__para--container flexdirection height__auto">
-      <div class="booking__para--orders--list">
+      <li class="booking__para--orders--list" v-for= "(appetizer, index) in $store.state.chosenAppetizers" :key="appetizer.id">
         <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
+          <p class="booking__para">{{ appetizer }}</p>
         </div>
         <div class="booking__change">
-          <p class="booking__para">00kr</p>
+          <p class="booking__para">{{$store.state.chosenAppetizersPrice[index]}}kr</p>
         </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-
+      </li>
       <div class="booking__change minimum__width margin__top displayflex">
         <p class="booking__para border__bottom textdecor">Lägg Till/Ta Bort</p>
-        <p class="booking__para">Total: 00kr</p>
+        <p class="booking__para">Total: {{$store.state.appetizerTotalPrice}}kr</p>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink, RouterView } from "vue-router";
 import OrderNote from "../components/OrderNote.vue";
 import OrderMenu from "../components/OrderMenu.vue";
 import Footer from "../components/FooterPage.vue";
@@ -23,7 +24,7 @@ import Footer from "../components/FooterPage.vue";
           Önskas något mer under besöket så går det självklart bra att göra
           ytterligare beställningar med våra servitriser på plats.
         </p>
-        <button id="ordering-btn">VIDARE TILL KASSAN</button>
+        <RouterLink to="/checkout"><button id="ordering-btn">VIDARE TILL KASSAN</button></RouterLink>
       </div>
     </div>
     <Footer />
