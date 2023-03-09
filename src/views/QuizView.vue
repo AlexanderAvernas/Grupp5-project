@@ -66,4 +66,176 @@ body {
   top: 50px;
   text-align: center;
 }
+
+@media screen and (max-width: 747px) {
+  #card {
+    width: auto;
+    height: 400px;
+  }
+
+  #col {
+  }
+
+  #cardquiz {
+  }
+
+  #quiztext > a {
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    width: 15rem;
+    height: 3rem;
+    color: #fff;
+    background-color: #492717;
+    border: 2px solid #ad8e6d;
+    border-radius: 30px;
+    font-size: 19px;
+  }
+
+  #quiztext > .a {
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    width: 15rem;
+    height: 3rem;
+    color: #fff;
+    background-color: #221109;
+    border: 2px solid #ad8e6d;
+    border-radius: 30px;
+    font-size: 19px;
+  }
+
+  #quiztext > a:hover {
+    background-color: #492717;
+  }
+
+  #quiztext > a:active {
+    background-color: #6d3d27;
+  }
+  #Quizdefault {
+    margin-left: 100px;
+  }
+
+  #button1 {
+    position: relative;
+    left: 1px;
+    top: 10px;
+  }
+
+  #button2 {
+    position: relative;
+    right: 1px;
+    top: 10px;
+  }
+  #button3 {
+    position: relative;
+    left: 1px;
+    bottom: 10px;
+  }
+  #button4 {
+    position: relative;
+    right: 1px;
+    bottom: 10px;
+  }
+
+  #quiztext > h5 {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #card {
+    width: auto;
+    height: 550px;
+  }
+
+  #quiztext {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  #button1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    position: relative;
+    top: 0px;
+  }
+
+  #button2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    position: relative;
+    top: 0px;
+  }
+  #button3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    position: relative;
+    bottom: 0px;
+  }
+  #button4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    position: relative;
+    bottom: 0px;
+  }
+
+  #quiztext > h5 {
+    grid-area: title;
+    justify-self: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+  }
+
+  #quiztext > a {
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    width: 15rem;
+    height: 3rem;
+    color: #fff;
+    background-color: #492717;
+    border: 2px solid #ad8e6d;
+    border-radius: 30px;
+    font-size: 19px;
+  }
+
+  #quiztext > .a {
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    width: 15rem;
+    height: 3rem;
+    color: #fff;
+    background-color: #221109;
+    border: 2px solid #ad8e6d;
+    border-radius: 30px;
+    font-size: 19px;
+  }
+  #quiztext > h4 {
+    grid-row-start: 6;
+  }
+  #quiztext > h6 {
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    margin-right: auto;
+    margin-top: auto;
+  }
+}
 </style>
