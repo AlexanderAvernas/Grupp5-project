@@ -1,7 +1,7 @@
 <script>
 import useValidate from "@vuelidate/core";
 import { required, email, numeric, alpha } from "@vuelidate/validators";
-
+import { RouterLink } from "vue-router";
 export default {
   data() {
     return {
@@ -15,7 +15,7 @@ export default {
       Tel: "",
 
       shadow: "0 0 10px red",
-      errorFörnamn: "hejsan",
+     
     };
   },
   methods: {
@@ -102,10 +102,16 @@ export default {
     </div>
   </div>
   <h1 class="booking__title">Går våran quiz och få rabatt redan idag!</h1>
+  
+  <RouterLink class="nav__link" to="/Quiz">
   <div class="button">
-    <h1 class="booking__title button__title">quiza och få rabatt</h1>
-  </div>
+      
+      <h1 class="booking__title button__title">quiza och få rabatt</h1>
+   
+    </div>
 
+
+    </RouterLink>
   <div class="booking__container height__third margin__bot--none">
     <h1 class="booking__title">personuppgifter:</h1>
     <div class="booking__para--container flexdirection">
@@ -168,7 +174,7 @@ export default {
     <div class="booking__container--checkboxes">
       <div class="checkbox">
         <div class="checkbox__container">
-          <input  type="radio" name="methodpay" />
+          <input  type="radio" name="methodpay" checked />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">swish</p>
             <p class="checkbox__para para__bot">Betala direkt</p>
@@ -216,7 +222,7 @@ export default {
       </div>
     </div>
   </div>
-  <div class="button width__fix button__margin">
+  <div @click="submitForm" class="button width__fix button__margin">
     <h1 @click="submitForm" class="booking__title button__title">Betala</h1>
   </div>
 </template>
@@ -329,10 +335,12 @@ p {
   align-items: center;
   border: 2px solid #ad8e6d;
   margin-top: 20px;
+  cursor: pointer;
 }
 .button__title {
   font-size: 18px;
   margin-bottom: 0;
+  cursor: pointer;
 }
 .height__third {
   margin-top: 127px;
@@ -451,5 +459,10 @@ p {
 }
 .button__margin {
   margin-bottom: 170px;
+}
+.nav__link {
+  text-decoration: none;
+ 
+  
 }
 </style>
