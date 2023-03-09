@@ -48,6 +48,11 @@ import { RouterLink, RouterView } from "vue-router";
                 >Beställ mat</RouterLink
               >
             </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/checkout"
+                >testcheckiout</RouterLink
+              >
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
