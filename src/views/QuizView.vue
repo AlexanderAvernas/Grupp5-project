@@ -12,11 +12,6 @@ import QuizComp from "../components/QuizComp.vue";
   <div id="cardquiz">
     <QuizComp> </QuizComp>
   </div>
-  <div class="container text-center">
-    <div class="d-flex justify-content-center">
-      <div class="d-flex align-items-center"></div>
-    </div>
-  </div>
 </template>
 
 <script></script>
