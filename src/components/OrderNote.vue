@@ -4,8 +4,12 @@
   <div class="order-container">
     <h2>BESTÄLLNING</h2>
     <ul id="order-list">
-      <li id="order-item">{{ $store.state.food.product }}</li>
-      <li id="order-item">{{ $store.state.food.price }}kr</li>
+      <li id="order-item">
+        {{ $store.state.food.product.toString().split(",").join("\n") }}
+      </li>
+      <li id="order-item">
+        {{ $store.state.food.price.toString().split(",").join("\n") }}
+      </li>
     </ul>
   </div>
 </template>
@@ -17,8 +21,8 @@
 .order-container {
   background-color: #d9d9d9;
   color: #1c1c1c;
-  width: 446px;
-  height: 503px;
+  width: 28rem;
+  height: 31.4rem;
   margin: 1.5rem;
 }
 
@@ -42,6 +46,8 @@
 
 #order-item {
   padding: 1rem;
+  max-width: 100%;
+  white-space: pre-wrap;
 }
 
 @media only screen and (max-width: 446px) {

@@ -19,40 +19,22 @@
     <div class="booking__para--container flexdirection height__auto">
       <div class="booking__para--orders--list">
         <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
+          <p class="booking__para">
+            {{ $store.state.food.product.toString().split(",").join("\n") }}
+          </p>
         </div>
         <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
+          <p class="booking__para">
+            {{ $store.state.food.price.toString().split(",").join("\n") }}
+          </p>
         </div>
       </div>
 
       <div class="booking__change minimum__width margin__top displayflex">
         <p class="booking__para border__bottom textdecor">Lägg Till/Ta Bort</p>
-        <p class="booking__para">Total: 00kr</p>
+        <p class="booking__para">
+          Total: {{ $store.state.food.price.reduce((a, b) => a + b, 0) }}kr
+        </p>
       </div>
     </div>
   </div>

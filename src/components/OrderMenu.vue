@@ -38,6 +38,7 @@ export default {
           "
           class="plus"
         ></button>
+        <button @click="$store.commit('remItem')" class="minus"></button>
       </li>
     </ul>
     <h3>Varmrätter</h3>
@@ -54,6 +55,7 @@ export default {
           "
           class="plus"
         ></button>
+        <button @click="$store.commit('remItem')" class="minus"></button>
       </li>
     </ul>
     <h3>Deserter</h3>
@@ -70,6 +72,7 @@ export default {
           "
           class="plus"
         ></button>
+        <button @click="$store.commit('remItem')" class="minus"></button>
       </li>
     </ul>
     <h3>Drycker</h3>
@@ -86,6 +89,7 @@ export default {
           "
           class="plus"
         ></button>
+        <button @click="$store.commit('remItem')" class="minus"></button>
       </li>
     </ul>
   </div>
@@ -142,6 +146,16 @@ export default {
   background-size: cover;
   height: 25px;
   width: 1.5rem;
+  border: 0;
+  margin-left: 8px;
+}
+
+.minus {
+  background-color: #1c1c1c;
+  background-image: url(../assets/pics/logos/minus.png);
+  background-size: cover;
+  height: 22px;
+  width: 1.2rem;
   border: 0;
   margin-left: 8px;
 }

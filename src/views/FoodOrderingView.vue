@@ -23,7 +23,9 @@ import Footer from "../components/FooterPage.vue";
           Önskas något mer under besöket så går det självklart bra att göra
           ytterligare beställningar med våra servitriser på plats.
         </p>
-        <button id="ordering-btn">VIDARE TILL KASSAN</button>
+        <button id="ordering-btn">
+          <RouterLink to="/checkout">VIDARE TILL KASSAN</RouterLink>
+        </button>
       </div>
     </div>
     <Footer />
