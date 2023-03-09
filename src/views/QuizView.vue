@@ -3,9 +3,14 @@ import QuizComp from "../components/QuizComp.vue";
 </script>
 
 <template>
+  <div id="Quizdefault">
+    <h2>Quiz</h2>
+    <h3>
+      Svara rätt på alla fem frågor och vinn 50kr rabatt på din beställning.
+    </h3>
+  </div>
   <div id="cardquiz">
     <QuizComp> </QuizComp>
-    <QuizResult></QuizResult>
   </div>
   <div class="container text-center">
     <div class="d-flex justify-content-center">
@@ -14,23 +19,7 @@ import QuizComp from "../components/QuizComp.vue";
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      value: null,
-      count: null,
-    };
-  },
-
-  methods: {
-    counted1(value, count) {
-      this.value = value;
-      this.count = count;
-    },
-  },
-};
-</script>
+<script></script>
 
 <style>
 body {
@@ -57,5 +46,24 @@ body {
 
 #col {
   margin: auto;
+}
+
+#Quizdefault h2 {
+  font-family: amiko;
+  font-weight: 400;
+  font-size: 35px;
+  color: white;
+  position: relative;
+  text-align: center;
+  top: 50px;
+}
+#Quizdefault h3 {
+  font-family: amiko;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  position: relative;
+  top: 50px;
+  text-align: center;
 }
 </style>
