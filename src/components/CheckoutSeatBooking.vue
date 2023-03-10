@@ -1,7 +1,6 @@
 <script>
 import useValidate from "@vuelidate/core";
 import { required, email, numeric, alpha } from "@vuelidate/validators";
-import { RouterLink } from "vue-router";
 export default {
   data() {
     return {
@@ -15,7 +14,6 @@ export default {
       Tel: "",
 
       shadow: "0 0 10px red",
-     
     };
   },
   methods: {
@@ -84,16 +82,12 @@ export default {
     </div>
   </div>
   <h1 class="booking__title">Går våran quiz och få rabatt redan idag!</h1>
-  
+
   <RouterLink class="nav__link" to="/Quiz">
-  <div class="button">
-      
+    <div class="button">
       <h1 class="booking__title button__title">quiza och få rabatt</h1>
-   
     </div>
-
-
-    </RouterLink>
+  </RouterLink>
   <div class="booking__container height__third margin__bot--none">
     <h1 class="booking__title">personuppgifter:</h1>
     <div class="booking__para--container flexdirection">
@@ -156,7 +150,7 @@ export default {
     <div class="booking__container--checkboxes">
       <div class="checkbox">
         <div class="checkbox__container">
-          <input  type="radio" name="methodpay" checked />
+          <input type="radio" name="methodpay" checked />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">swish</p>
             <p class="checkbox__para para__bot">Betala direkt</p>
@@ -174,7 +168,7 @@ export default {
 
       <div class="checkbox">
         <div class="checkbox__container">
-          <input  type="radio" name="methodpay" />
+          <input type="radio" name="methodpay" />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">BANKÖVERFÖRING</p>
             <p class="checkbox__para para__bot">Betala direkt</p>
@@ -191,7 +185,7 @@ export default {
       </div>
       <div class="checkbox">
         <div class="checkbox__container">
-          <input  type="radio" name="methodpay" />
+          <input type="radio" name="methodpay" />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">Klarna Faktura</p>
             <p class="checkbox__para para__bot">Ät nu - betala sen</p>
@@ -444,7 +438,5 @@ p {
 }
 .nav__link {
   text-decoration: none;
- 
-  
 }
 </style>

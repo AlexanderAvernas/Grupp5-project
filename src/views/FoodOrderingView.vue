@@ -119,6 +119,7 @@ import Footer from "../components/FooterPage.vue";
   margin-top: 1.5rem;
 }
 
+
 @media only screen and (max-width: 1100px) {
   .ordering-background {
     background-attachment: fixed;
