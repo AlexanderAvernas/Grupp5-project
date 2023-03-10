@@ -6,7 +6,7 @@ import QuizComp from "../components/QuizComp.vue";
   <div id="Quizdefault">
     <h2>Quiz</h2>
     <h3>
-      Svara rätt på alla fem frågor och vinn 50kr rabatt på din beställning.
+      Svara rätt på alla fem frågor och vinn upp till 100kr rabatt på din beställning.
     </h3>
   </div>
   <div id="cardquiz">
