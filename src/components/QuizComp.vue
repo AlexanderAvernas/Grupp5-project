@@ -238,7 +238,7 @@ export default {
   color: #fff;
   font-size: 22px;
   margin-right: auto;
-}   
+}
 
 #button1 {
   position: relative;
