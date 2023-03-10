@@ -6,6 +6,7 @@ const store = createStore({
     date: "",
     time: "",
     guests: "",
+    table: "",
   },
 
   mutations: {
@@ -20,6 +21,10 @@ const store = createStore({
     },
     updateGuests(state, payload) {
       state.guests = payload;
+    },
+    selectSeat(state, seat) {
+      state.table = seat;
+      console.log(state.table);
     },
   },
 
