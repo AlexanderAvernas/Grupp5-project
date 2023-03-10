@@ -88,9 +88,6 @@ body {
     text-align: center;
   }
 
-  #Quizdefault {
-  }
-
   #quiztext > a {
     justify-self: center;
     align-self: center;
@@ -164,7 +161,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 150vh;
+    height: 200vh;
   }
 
   #card {
