@@ -6,16 +6,12 @@ import QuizComp from "../components/QuizComp.vue";
   <div id="Quizdefault">
     <h2>Quiz</h2>
     <h3>
-      Svara rätt på alla fem frågor och vinn 50kr rabatt på din beställning.
+      Svara rätt på alla fem frågor och vinn upp till 100kr rabatt på din
+      beställning.
     </h3>
   </div>
   <div id="cardquiz">
     <QuizComp> </QuizComp>
-  </div>
-  <div class="container text-center">
-    <div class="d-flex justify-content-center">
-      <div class="d-flex align-items-center"></div>
-    </div>
   </div>
 </template>
 
@@ -73,10 +69,26 @@ body {
     height: 400px;
   }
 
-  #col {
+  #Quizdefault h2 {
+    font-family: amiko;
+    font-weight: 400;
+    font-size: 35px;
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 50px;
+  }
+  #Quizdefault h3 {
+    font-family: amiko;
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    position: relative;
+    top: 50px;
+    text-align: center;
   }
 
-  #cardquiz {
+  #Quizdefault {
   }
 
   #quiztext > a {
@@ -111,9 +123,6 @@ body {
 
   #quiztext > a:active {
     background-color: #6d3d27;
-  }
-  #Quizdefault {
-    margin-left: 100px;
   }
 
   #button1 {
@@ -150,9 +159,17 @@ body {
 }
 
 @media screen and (max-width: 520px) {
+  body {
+    background: url(../assets/pics/quiz_page.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150vh;
+  }
+
   #card {
     width: auto;
-    height: 550px;
+    height: 700px;
   }
 
   #quiztext {
@@ -200,6 +217,8 @@ body {
     align-items: center;
     color: white;
     font-size: 20px;
+    position: relative;
+    top: 30px;
   }
 
   #quiztext > a {
@@ -229,6 +248,8 @@ body {
   }
   #quiztext > h4 {
     grid-row-start: 6;
+    position: relative;
+    bottom: 15px;
   }
   #quiztext > h6 {
     color: #fff;
@@ -236,6 +257,8 @@ body {
     text-align: center;
     margin-right: auto;
     margin-top: auto;
+    position: relative;
+    bottom: 15px;
   }
 }
 </style>
