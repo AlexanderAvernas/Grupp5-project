@@ -1,8 +1,13 @@
-<script>
+<script setup>
 import useValidate from "@vuelidate/core";
 
 import { required, email, numeric, alpha } from "@vuelidate/validators";
-import { RouterLink } from "vue-router";
+import { RouterLink, RouterView } from "vue-router";
+
+</script>
+
+<script>
+
 export default {
   data() {
     return {
@@ -39,6 +44,8 @@ export default {
   },
 };
 </script>
+
+
 
 <template>
   <div class="booking__container">
@@ -223,6 +230,8 @@ export default {
   >
     Betala
   </button>
+  <RouterView />
+
 </template>
 <style>
 input:focus,
