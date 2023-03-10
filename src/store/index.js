@@ -2,6 +2,11 @@ import { createStore } from "vuex";
 
 const store = createStore({
   state: {
+    counter: 0,
+    date: "",
+    time: "",
+    guests: "",
+    
     appetizerId: [],
     chosenAppetizers: [],
     amountAppetizers: [],
@@ -10,6 +15,19 @@ const store = createStore({
   },
 
   mutations: {
+    increment(state, amount) {
+    state.counter += amount;
+    },
+    updateDate(state, payload) {
+      state.date = payload;
+    },
+    updateTime(state, payload) {
+      state.time = payload;
+    },
+    updateGuests(state, payload) {
+      state.guests = payload;
+    },  
+      
     addAppetizer(state, { appetizer, price, id }) {
       /* AMOUNT OF APPETIZERS "x2" */
 
@@ -22,7 +40,7 @@ const store = createStore({
         if (appetizer === state.amountAppetizers[i]) {
           count++;
         }
-      }
+      },
 
       /* TOTAL PRICE */
 
@@ -50,7 +68,8 @@ const store = createStore({
 
       if (state.chosenAppetizers[0] === undefined) {
         state.chosenAppetizers.push(appetizer);
-      } else {
+      } 
+      else {
         var a = state.chosenAppetizers.length;
         var same = false;
 
@@ -64,7 +83,6 @@ const store = createStore({
           state.chosenAppetizers.push(appetizer);
         }
       }
-    },
   },
 });
 

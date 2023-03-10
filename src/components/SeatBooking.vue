@@ -15,11 +15,26 @@
     <div class="input-container">
       <form class="form">
         <label for="date">Datum:</label>
-        <input type="date" name="date" value="" />
+        <input
+          v-model="date"
+          @input="$store.commit('updateDate', this.date)"
+          type="date"
+          name="date"
+        />
         <label for="time">TID:</label>
-        <input type="time" step="3600000" name="time" value="14:00" />
+        <input
+          @input="$store.commit('updateTime', this.time)"
+          v-model="time"
+          type="time"
+          step="3600000"
+          name="time"
+        />
         <label for="guests">Antal:</label>
-        <select v-model="selectedOption" name="guests">
+        <select
+          @click="$store.commit('updateGuests', this.selectedOption)"
+          v-model="selectedOption"
+          name="guests"
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -105,34 +120,16 @@
       <button type="button">VIDARE TILL MENYN</button>
     </div>
   </div>
-
-  <!-- FOOTER -->
-  <!-- <div class="footer-container">
-    <div id="item1"><p>© 2023 GRUPP 5</p></div>
-    <div id="item2">
-      <img
-        class="logo"
-        src="../assets/pics/logos/facebook.png"
-        alt="facebook logo"
-      />
-      <img
-        class="logo"
-        src="../assets/pics/logos/insta.png"
-        alt="instagram logo"
-      />
-      <img
-        class="logo"
-        src="../assets/pics/logos/tiktok.png"
-        alt="tiktok logo"
-      />
-    </div>
-  </div> -->
+  <h4>{{ $store.state.date }}</h4>
+  <h4>{{ $store.state.time }}</h4>
+  <h4>{{ $store.state.guests }}</h4>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      guest: "",
       tablesLeft: [
         { id: 1, available: true },
         { id: 2, available: true },
@@ -392,13 +389,12 @@ button:hover {
     display: grid;
     grid-template-columns: 5rem 5rem 5rem auto;
     grid-template-rows: auto;
-    margin: 20vh 0 10vh auto;
+    margin: 10vh 0 10vh auto;
     width: 100%;
     height: fit-content;
-    border: none;
   }
   .tableCenterL-container {
-    grid-column: 2 / 2;
+    grid-column: 2 / 3;
     grid-row: 1;
     margin-top: 6rem;
   }
@@ -415,15 +411,15 @@ button:hover {
     height: 2rem;
   }
   .tableCenter-container {
-    grid-column: 3/3;
-    margin-bottom: 5rem;
+    grid-column: 3/4;
+    margin-top: 8rem;
   }
   #centerSeat > div {
     height: 2rem;
     width: 2rem;
   }
   .tablesRight-container {
-    grid-column: 4/4;
+    grid-column: 4/5;
     justify-content: center;
     align-items: end;
     width: fit-content;
@@ -438,9 +434,9 @@ button:hover {
     text-align: center;
   }
   .tableBottom-container {
-    grid-column: 3 /4;
+    grid-column: 3 / 5;
     grid-row: 2;
-    justify-content: start;
+    justify-content: end;
   }
   #app
     > main
@@ -481,32 +477,4 @@ button:hover {
     width: 2rem;
   }
 }
-
-/* FOOTER */
-/* .footer-container {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 3.25rem;
-
-  top: 89.6rem;
-  background: rgba(28, 28, 28, 0.8);
-}
-#item1 {
-  padding-top: 1em;
-  padding-left: 2em;
-  color: #ffffff;
-}
-#item2 {
-  padding-top: 0.5em;
-  padding-right: 2em;
-  margin: 0 0 0 auto;
-}
-.logo {
-  margin: 9px;
-  width: 23px;
-  height: 23px;
-  left: 1135px;
-  top: 1185px;
-} */
 </style>

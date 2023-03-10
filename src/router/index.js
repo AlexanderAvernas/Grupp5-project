@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import QuizView from "../views/QuizView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/checkout",
       name: "CheckoutPage",
       component: () => import("../views/CheckoutView.vue"),
+    },
+    {
+      path: "/Quiz",
+      name: "Quiz",
+      component: QuizView,
     },
   ],
 });
