@@ -1,15 +1,69 @@
-<script></script>
+<script>
+import useValidate from "@vuelidate/core";
+
+import { required, email, numeric, alpha } from "@vuelidate/validators";
+import { RouterLink } from "vue-router";
+export default {
+  data() {
+    return {
+      v$: useValidate(),
+      Förnamn: "",
+      Efternamn: "",
+      Email: "",
+      Tel: "",
+      shadow: "0 0 10px red",
+    };
+  },
+
+  computed: {
+    priceCalc() {
+      return this.$store.getters.priceCalc;
+    },
+  },
+  methods: {
+    submitForm() {
+      this.v$.$validate();
+      if (!this.v$.$error) {
+        alert("Form successfully submitted.");
+      }
+    },
+  },
+
+  validations() {
+    return {
+      Förnamn: { required, alpha },
+      Efternamn: { required, alpha },
+      Email: { required, email },
+      Tel: { required, numeric },
+    };
+  },
+};
+</script>
+
 <template>
   <div class="booking__container">
     <h1 class="booking__title">Bordsbokning:</h1>
     <div class="booking__para--container">
       <div class="booking__para--variables">
-        <p class="booking__para">Bord: 3</p>
-        <p class="booking__para">18:00</p>
-        <p class="booking__para">17/3 - 2023</p>
+        <div
+          v-if="$store.state.time && $store.state.date && $store.state.table"
+          class="v-if"
+        >
+          <p class="booking__para">{{ $store.state.time }}</p>
+          <p class="booking__para">Bord: {{ $store.state.table }}</p>
+          <p class="booking__para">{{ $store.state.date }}</p>
+        </div>
+
+        <div v-else class="v-else">
+          <p class="booking__para">Tid: Ej valt</p>
+          <p class="booking__para">Bord: Ej Valt</p>
+          <p class="booking__para">Datum: Ej valt</p>
+        </div>
       </div>
       <div class="booking__change">
-        <p class="booking__para border__bottom textdecor">Ändra</p>
+        <RouterLink class="nav__link" to="/booking">
+          <p class="booking__para border__bottom textdecor">Ändra</p>
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -17,50 +71,42 @@
   <div class="booking__container minimum__height">
     <h1 class="booking__title">beställning:</h1>
     <div class="booking__para--container flexdirection height__auto">
-      <div class="booking__para--orders--list">
+      <li
+        class="booking__para--orders--list"
+        v-for="(appetizer, index) in $store.state.chosenAppetizers"
+        :key="appetizer.id"
+      >
         <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
+          <p class="booking__para">{{ appetizer }}</p>
         </div>
         <div class="booking__change">
-          <p class="booking__para">00kr</p>
+          <p class="booking__para">
+            {{ $store.state.chosenAppetizersPrice[index] }}kr
+          </p>
         </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-      <div class="booking__para--orders--list">
-        <div class="booking__para--variables">
-          <p class="booking__para">Lorem Ipsum</p>
-        </div>
-        <div class="booking__change">
-          <p class="booking__para">00kr</p>
-        </div>
-      </div>
-
+      </li>
       <div class="booking__change minimum__width margin__top displayflex">
-        <p class="booking__para border__bottom textdecor">Lägg Till/Ta Bort</p>
-        <p class="booking__para">Total: 00kr</p>
+        <RouterLink class="nav__link" to="/ordering">
+          <p class="booking__para border__bottom textdecor">
+            Lägg Till/Ta Bort
+          </p>
+        </RouterLink>
+
+        <p v-if="$store.state.count" class="booking__para">
+          Quiz Rabatt: {{ $store.state.count }}kr
+        </p>
+        <p v-else class="booking__para">Quiz Rabatt: 0kr</p>
       </div>
+      <p class="booking__para textalignleft">Total: {{ priceCalc }}kr</p>
     </div>
   </div>
   <h1 class="booking__title">Går våran quiz och få rabatt redan idag!</h1>
-  <div class="button">
-    <h1 class="booking__title button__title">quiza och få rabatt</h1>
-  </div>
 
+  <RouterLink class="nav__link" to="/Quiz">
+    <div class="button">
+      <h1 class="booking__title button__title">quiza och få rabatt</h1>
+    </div>
+  </RouterLink>
   <div class="booking__container height__third margin__bot--none">
     <h1 class="booking__title">personuppgifter:</h1>
     <div class="booking__para--container flexdirection">
@@ -68,30 +114,37 @@
         <p class="booking__para margin__fix">Förnamn:</p>
 
         <input
+          v-model="Förnamn"
           type="text"
           required
           placeholder="Förnamn"
           name="Förnamn"
           class="cred__input"
+          errorFörnamn
+          :style="{ boxShadow: v$.Förnamn.$error ? shadow : null }"
         />
 
         <p class="booking__para margin__fix margin__fix--two">Efternamn:</p>
 
         <input
+          v-model="Efternamn"
           type="text"
           required
           placeholder="Efternamn"
           name="Efternamn"
           class="cred__input length__fix--two"
+          :style="{ boxShadow: v$.Efternamn.$error ? shadow : null }"
         />
       </div>
       <div class="input__field--container pos__fix">
         <p class="booking__para margin__fix pos__fix--two">E-Mail:</p>
 
         <input
+          v-model="Email"
           type="email"
           required
-          placeholder="E-Mail"
+          placeholder="E-mail"
+          :style="{ boxShadow: v$.Email.$error ? shadow : null }"
           name="E-Mail"
           class="cred__input length__fix margin__fix--three"
         />
@@ -99,21 +152,24 @@
         <p class="booking__para margin__fix margin__fix--two">Tel:</p>
 
         <input
+          v-model="Tel"
           type="tel"
           required
           placeholder="Tel"
           name="Tel"
           class="cred__input"
+          :style="{ boxShadow: v$.Tel.$error ? shadow : null }"
         />
       </div>
     </div>
     <h1 class="booking__title position__fix--five">Betalningsmetod:</h1>
   </div>
+
   <div class="booking__container height__third margin__top--none color__fix">
     <div class="booking__container--checkboxes">
       <div class="checkbox">
         <div class="checkbox__container">
-          <input type="checkbox" />
+          <input type="radio" name="methodpay" checked />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">swish</p>
             <p class="checkbox__para para__bot">Betala direkt</p>
@@ -131,7 +187,7 @@
 
       <div class="checkbox">
         <div class="checkbox__container">
-          <input type="checkbox" />
+          <input type="radio" name="methodpay" />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">BANKÖVERFÖRING</p>
             <p class="checkbox__para para__bot">Betala direkt</p>
@@ -148,7 +204,7 @@
       </div>
       <div class="checkbox">
         <div class="checkbox__container">
-          <input type="checkbox" />
+          <input type="radio" name="methodpay" />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">Klarna Faktura</p>
             <p class="checkbox__para para__bot">Ät nu - betala sen</p>
@@ -161,9 +217,12 @@
       </div>
     </div>
   </div>
-  <div class="button width__fix button__margin">
-    <h1 class="booking__title button__title">Betala</h1>
-  </div>
+  <button
+    @click="submitForm"
+    class="button width__fix button__margin booking__title button__title"
+  >
+    Betala
+  </button>
 </template>
 <style>
 input:focus,
@@ -240,6 +299,12 @@ p {
   justify-content: space-between;
   width: 50%;
 }
+.v-if,
+.v-else {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .border__bottom {
   border-bottom: 2px solid white;
 }
@@ -268,10 +333,12 @@ p {
   align-items: center;
   border: 2px solid #ad8e6d;
   margin-top: 20px;
+  cursor: pointer;
 }
 .button__title {
   font-size: 18px;
   margin-bottom: 0;
+  cursor: pointer;
 }
 .height__third {
   margin-top: 127px;
@@ -283,8 +350,9 @@ p {
   height: 25px;
   background: #d9d9d9;
   border-radius: 5px;
-  border: none;
   margin-left: 5px;
+  border: 2px solid transparent;
+  transition: all 300ms ease;
 }
 
 .margin__fix {
@@ -389,5 +457,11 @@ p {
 }
 .button__margin {
   margin-bottom: 170px;
+}
+.nav__link {
+  text-decoration: none;
+}
+.textalignleft {
+  text-align: end;
 }
 </style>

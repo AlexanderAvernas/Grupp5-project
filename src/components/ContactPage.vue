@@ -111,12 +111,11 @@ h1 {
   width: fit-content;
   height: 1.5rem;
   left: 15.5vw;
-  top: 3vh;
+  top: 35vh;
   font-family: "Amiko";
   font-style: normal;
   font-weight: 400;
   font-size: 1.125rem;
-  line-height: 1.5rem;
   color: #ffffff;
 }
 
@@ -222,7 +221,7 @@ button {
   position: absolute;
   width: 9rem;
   height: 1.5rem;
-  left: 21vw;
+  left: 15.55vw;
   top: 73.66vh;
   font-family: "Amiko";
   font-style: normal;
@@ -238,10 +237,10 @@ button {
   height: 7.688rem;
   width: 53.625rem;
   top: 78vh;
-  left: 13vw;
+  left: 15.55vw;
 }
 #gmap_canvas {
-  width: 69vw;
+  width: 66vw;
 }
 
 @media screen and (max-width: 600px) {
