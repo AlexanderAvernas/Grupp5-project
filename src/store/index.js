@@ -5,13 +5,13 @@ const store = createStore({
     counter: 0,
     date: "",
     time: "",
-    guests: "",
-    
+    guests: "",  
     appetizerId: [],
     chosenAppetizers: [],
     amountAppetizers: [],
     chosenAppetizersPrice: [],
     appetizerTotalPrice: 0,
+
   },
 
   mutations: {
@@ -45,6 +45,12 @@ const store = createStore({
       /* TOTAL PRICE */
 
       state.appetizerTotalPrice = state.appetizerTotalPrice + price;
+    },
+    selectSeat(state, seat) {
+      state.table = seat;
+      console.log(state.table);
+    },
+  },
 
       /* SEPARATE PRICE */
 
