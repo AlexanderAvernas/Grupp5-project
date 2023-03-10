@@ -158,6 +158,14 @@ body {
 }
 
 @media screen and (max-width: 520px) {
+  body {
+    background: url(../assets/pics/quiz_page.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150vh;
+  }
+
   #card {
     width: auto;
     height: 700px;
