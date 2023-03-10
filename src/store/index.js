@@ -10,65 +10,62 @@ const store = createStore({
   },
 
   mutations: {
-
-    addAppetizer(state, {appetizer, price, id}) {
-
+    addAppetizer(state, { appetizer, price, id }) {
       /* AMOUNT OF APPETIZERS "x2" */
 
-      state.amountAppetizers.push(appetizer)
+      state.amountAppetizers.push(appetizer);
 
-      var count = 0
-      var b = state.amountAppetizers.length
+      var count = 0;
+      var b = state.amountAppetizers.length;
 
-      for(let i = 0; i < b; i++) {
-          if(appetizer === state.amountAppetizers[i]){
-              count++
-          }
+      for (let i = 0; i < b; i++) {
+        if (appetizer === state.amountAppetizers[i]) {
+          count++;
+        }
       }
 
       /* TOTAL PRICE */
 
-      state.appetizerTotalPrice = state.appetizerTotalPrice + price
+      state.appetizerTotalPrice = state.appetizerTotalPrice + price;
 
       /* SEPARATE PRICE */
 
-      var c = state.appetizerId.length
-      var exists = false
+      var c = state.appetizerId.length;
+      var exists = false;
 
-      for(let i = 0; i < c; i++) {
-        if(id === state.appetizerId[i]) {
-          exists = true
-          state.chosenAppetizersPrice[i] = state.chosenAppetizersPrice[i] + price
+      for (let i = 0; i < c; i++) {
+        if (id === state.appetizerId[i]) {
+          exists = true;
+          state.chosenAppetizersPrice[i] =
+            state.chosenAppetizersPrice[i] + price;
         }
       }
 
-      if(exists === false){
-          state.chosenAppetizersPrice.push(price)
-          state.appetizerId.push(id)
+      if (exists === false) {
+        state.chosenAppetizersPrice.push(price);
+        state.appetizerId.push(id);
       }
 
       /* ADD APPETIZER TO NOTE*/
 
-      if(state.chosenAppetizers[0] === undefined){
-      state.chosenAppetizers.push(appetizer)
-      }
+      if (state.chosenAppetizers[0] === undefined) {
+        state.chosenAppetizers.push(appetizer);
+      } else {
+        var a = state.chosenAppetizers.length;
+        var same = false;
 
-      else{
-        var a = state.chosenAppetizers.length
-        var same = false
-
-        for(let i = 0; i < a; i++) {
-            if(state.chosenAppetizers[i].includes(appetizer)){
-              same = true
-              state.chosenAppetizers.splice([i], 1, appetizer + ' x' + count)
-            }
+        for (let i = 0; i < a; i++) {
+          if (state.chosenAppetizers[i].includes(appetizer)) {
+            same = true;
+            state.chosenAppetizers.splice([i], 1, appetizer + " x" + count);
+          }
         }
-        if(same === false){
-          state.chosenAppetizers.push(appetizer)
+        if (same === false) {
+          state.chosenAppetizers.push(appetizer);
         }
       }
-    }
-  }
+    },
+  },
 });
 
 export default store;

@@ -3,8 +3,12 @@
 <template>
   <div class="order-container">
     <h2>BESTÄLLNING</h2>
-    <ul class="order-list" v-for="appetizer in $store.state.chosenAppetizers">
-      <li class="order-item"> {{appetizer}}</li>
+    <ul
+      class="order-list"
+      v-for="appetizer in $store.state.chosenAppetizers"
+      :key="appetizer.id"
+    >
+      <li class="order-item">{{ appetizer }}</li>
       <button class="minus hide"></button>
     </ul>
   </div>
@@ -45,11 +49,11 @@
 }
 
 .order-item {
-  margin: 0 .8rem;
+  margin: 0 0.8rem;
   padding: 0;
 }
 
-.order-list:hover .hide{
+.order-list:hover .hide {
   display: block;
 }
 

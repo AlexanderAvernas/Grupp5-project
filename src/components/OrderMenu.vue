@@ -19,10 +19,10 @@ export default {
     };
   },
   methods: {
-    starterClick(appetizer, price, id){
-      this.$store.commit('addAppetizer', {appetizer, price, id})
-    }
-  }
+    starterClick(appetizer, price, id) {
+      this.$store.commit("addAppetizer", { appetizer, price, id });
+    },
+  },
 };
 </script>
 
@@ -34,7 +34,12 @@ export default {
       <li class="menu-li" v-for="appetizer in appetizers" :key="appetizer.id">
         <p class="product">{{ appetizer.product }}</p>
         <p class="price">{{ appetizer.price }}kr</p>
-        <button class="plus" @click="starterClick(appetizer.product, appetizer.price, appetizer.id)"></button>
+        <button
+          class="plus"
+          @click="
+            starterClick(appetizer.product, appetizer.price, appetizer.id)
+          "
+        ></button>
       </li>
     </ul>
     <h3>Varmrätter</h3>

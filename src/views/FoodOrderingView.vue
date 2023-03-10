@@ -24,11 +24,14 @@ import Footer from "../components/FooterPage.vue";
           Önskas något mer under besöket så går det självklart bra att göra
           ytterligare beställningar med våra servitriser på plats.
         </p>
-        <RouterLink to="/checkout"><button id="ordering-btn">VIDARE TILL KASSAN</button></RouterLink>
+        <RouterLink to="/checkout"
+          ><button id="ordering-btn">VIDARE TILL KASSAN</button></RouterLink
+        >
       </div>
     </div>
     <Footer />
   </div>
+  <RouterView />
 </template>
 
 <style scoped>
