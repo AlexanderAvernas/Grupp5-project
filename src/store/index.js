@@ -24,6 +24,10 @@ const store = createStore({
     updateFormValues(state, payload) {
       state.formValues[payload.field] = payload.value;
     },
+    selectSeat(state, seat) {
+      state.table = seat;
+      console.log(state.table);
+    },
   },
 
   strict: true,

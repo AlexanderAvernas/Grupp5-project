@@ -38,6 +38,9 @@
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
       </form>
     </div>
@@ -48,7 +51,8 @@
         <div
           v-for="tableRight in tablesRight"
           :key="tableRight.id"
-          @click="selectSeat(tableRight)"
+          @click="$store.commit('selectSeat', tableRight.id)"
+          :class="{ selectedSeatColor: tableRight.id === $store.state.table }"
         >
           <div v-if="tableRight.available" class="seat available">
             {{ tableRight.id }}
@@ -62,7 +66,8 @@
         <div
           v-for="tableLeft in tablesLeft"
           :key="tableLeft.id"
-          @click="selectSeat(tableLeft)"
+          @click="$store.commit('selectSeat', tableLeft.id)"
+          :class="{ selectedSeatColor: tableLeft.id === $store.state.table }"
         >
           <div v-if="tableLeft.available" class="seat available">
             {{ tableLeft.id }}
@@ -76,7 +81,8 @@
         <div
           v-for="tableBottom in tablesBottom"
           :key="tableBottom.id"
-          @click="selectSeat(tableBottom)"
+          @click="$store.commit('selectSeat', tableBottom.id)"
+          :class="{ selectedSeatColor: tableBottom.id === $store.state.table }"
         >
           <div v-if="tableBottom.available" class="seat available">
             {{ tableBottom.id }}
@@ -91,7 +97,8 @@
           id="centerSeat"
           v-for="tableCenter in tablesCenter"
           :key="tableCenter.id"
-          @click="selectSeat(tableCenter)"
+          @click="$store.commit('selectSeat', tableCenter.id)"
+          :class="{ selectedSeatColor: tableCenter.id === $store.state.table }"
         >
           <div v-if="tableCenter.available" class="seat available">
             {{ tableCenter.id }}
@@ -105,7 +112,8 @@
         <div
           v-for="tableCenterL in tablesCenterL"
           :key="tableCenterL.id"
-          @click="selectSeat(tableCenterL)"
+          @click="$store.commit('selectSeat', tableCenterL.id)"
+          :class="{ selectedSeatColor: tableCenterL.id === $store.state.table }"
         >
           <div v-if="tableCenterL.available" class="seat available">
             {{ tableCenterL.id }}
@@ -123,6 +131,8 @@
   <h4>{{ $store.state.date }}</h4>
   <h4>{{ $store.state.time }}</h4>
   <h4>{{ $store.state.guests }}</h4>
+  <h4>{{ selectedOption }}</h4>
+  <h4>{{ $store.state.table }}</h4>
 </template>
 
 <script>
@@ -138,7 +148,7 @@ export default {
       tablesCenterL: [
         { id: 4, available: true },
         { id: 5, available: true },
-        { id: 6, available: false },
+        { id: 6, available: true },
       ],
       tablesCenter: [
         { id: 7, available: true },
@@ -146,7 +156,7 @@ export default {
         { id: 9, available: true },
       ],
       tablesRight: [
-        { id: 10, available: false },
+        { id: 10, available: true },
         { id: 11, available: true },
       ],
       tablesBottom: [
@@ -154,14 +164,57 @@ export default {
         { id: 13, available: true },
       ],
       selectedOption: 0,
+      value: 0,
     };
   },
   watch: {
-    selectedOption(val) {
-      if (val === 1) {
-        this.tablesRight[1].available = true;
-      } else {
+    selectedOption(value) {
+      if (value == 1) {
+        this.tablesRight[0].available = false;
         this.tablesRight[1].available = false;
+        this.tablesLeft[2].available = false;
+        this.tablesCenterL[0].available = false;
+        this.tablesCenterL[1].available = false;
+        this.tablesBottom[0].available = true;
+        this.tablesBottom[1].available = true;
+      }
+      if (value == 2) {
+        this.tablesRight[0].available = false;
+        this.tablesRight[1].available = false;
+        this.tablesLeft[2].available = false;
+        this.tablesCenterL[0].available = false;
+        this.tablesCenterL[1].available = false;
+        this.tablesBottom[0].available = true;
+        this.tablesBottom[1].available = true;
+        this.tablesCenter[0].available = true;
+        this.tablesCenter[1].available = true;
+        this.tablesCenter[2].available = true;
+        this.tablesCenterL[2].available = true;
+      }
+      if (value == 4) {
+        this.tablesRight[0].available = true;
+        this.tablesRight[1].available = true;
+        this.tablesLeft[2].available = true;
+        this.tablesCenter[0].available = true;
+        this.tablesCenter[1].available = true;
+        this.tablesCenter[2].available = true;
+        this.tablesLeft[0].available = true;
+        this.tablesLeft[1].available = true;
+        this.tablesCenterL[0].available = true;
+        this.tablesCenterL[1].available = true;
+        this.tablesCenterL[2].available = true;
+        this.tablesBottom[0].available = false;
+        this.tablesBottom[1].available = false;
+      }
+      if (value == 5) {
+        this.tablesCenter[0].available = false;
+        this.tablesCenter[1].available = false;
+        this.tablesCenter[2].available = false;
+        this.tablesCenterL[2].available = false;
+        this.tablesLeft[0].available = false;
+        this.tablesLeft[1].available = false;
+        this.tablesBottom[0].available = false;
+        this.tablesBottom[1].available = false;
       }
     },
   },
@@ -173,10 +226,6 @@ export default {
         seat.available = false;
         alert("Not available");
       }
-    },
-    //Vuex
-    updateFormValues(field, value) {
-      this.$store.commit("updateFormValues", { field, value });
     },
   },
 };
@@ -196,7 +245,15 @@ export default {
   border-radius: 25px;
   place-content: center;
 }
+
+/* selected seat style */
+.selectedSeatColor .seat.available {
+  background-color: #1a630e;
+  box-shadow: 0 0 50px 15px #62ce44;
+}
+
 /* TABLE CENTER ROUND TABLES  */
+
 .tableCenter-container {
   grid-column: 3 / 4;
   grid-row: 1;
@@ -277,9 +334,9 @@ div.tablesRight-container > div:nth-child(2) > div {
   cursor: pointer;
   background-color: #d9d9d9;
 }
-
 .seat.available:hover {
   background-color: #1a630e;
+  box-shadow: 0 0 50px 15px #62ce44;
   color: #fff;
   transform: scale(1.1);
 }
@@ -297,7 +354,6 @@ div.tablesRight-container > div:nth-child(2) > div {
   background-size: cover;
   position: relative;
 }
-
 .text-container {
   display: flex;
   justify-content: center;
@@ -374,9 +430,7 @@ button {
 button:hover {
   transform: scale(1.1);
 }
-
 /* MOBILE DEVICE CSS */
-
 @media screen and (max-width: 600px) {
   .text {
     position: absolute;
@@ -386,7 +440,6 @@ button:hover {
     font-style: normal;
     font-weight: 600;
     font-size: 1rem;
-
     text-align: center;
   }
   .container {
@@ -482,3 +535,5 @@ button:hover {
   }
 }
 </style>
+Footer © 2023 GitHub, Inc. Footer navigation Terms Privacy Security Status Docs
+Contact GitHub Pricing API Training Blog About
