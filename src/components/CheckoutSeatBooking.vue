@@ -1,5 +1,4 @@
-<script>
-</script>
+<script></script>
 
 <template>
   <div class="booking__container">
@@ -19,17 +18,25 @@
   <div class="booking__container minimum__height">
     <h1 class="booking__title">beställning:</h1>
     <div class="booking__para--container flexdirection height__auto">
-      <li class="booking__para--orders--list" v-for= "(appetizer, index) in $store.state.chosenAppetizers" :key="appetizer.id">
+      <li
+        class="booking__para--orders--list"
+        v-for="(appetizer, index) in $store.state.chosenAppetizers"
+        :key="appetizer.id"
+      >
         <div class="booking__para--variables">
           <p class="booking__para">{{ appetizer }}</p>
         </div>
         <div class="booking__change">
-          <p class="booking__para">{{$store.state.chosenAppetizersPrice[index]}}kr</p>
+          <p class="booking__para">
+            {{ $store.state.chosenAppetizersPrice[index] }}kr
+          </p>
         </div>
       </li>
       <div class="booking__change minimum__width margin__top displayflex">
         <p class="booking__para border__bottom textdecor">Lägg Till/Ta Bort</p>
-        <p class="booking__para">Total: {{$store.state.appetizerTotalPrice}}kr</p>
+        <p class="booking__para">
+          Total: {{ $store.state.appetizerTotalPrice }}kr
+        </p>
       </div>
     </div>
   </div>
