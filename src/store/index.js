@@ -6,17 +6,22 @@ const store = createStore({
     date: "",
     time: "",
     guests: "",
+    count: "",
     appetizerId: [],
     chosenAppetizers: [],
     amountAppetizers: [],
     chosenAppetizersPrice: [],
     appetizerTotalPrice: 0,
-
+  },
+  getters: {
+priceCalc: state =>{
+  return state.appetizerTotalPrice - state.count 
+}
   },
 
   mutations: {
     increment(state, amount) {
-    state.counter += amount;
+      state.counter += amount;
     },
     updateDate(state, payload) {
       state.date = payload;
@@ -30,6 +35,9 @@ const store = createStore({
     selectSeat(state, seat) {
       state.table = seat;
       console.log(state.table);
+    },
+    updateCount(state, payload) {
+      state.count = payload;
     },
 
     addAppetizer(state, { appetizer, price, id }) {
@@ -49,7 +57,6 @@ const store = createStore({
       /* TOTAL PRICE */
 
       state.appetizerTotalPrice = state.appetizerTotalPrice + price;
-
 
       /* SEPARATE PRICE */
 
@@ -73,8 +80,7 @@ const store = createStore({
 
       if (state.chosenAppetizers[0] === undefined) {
         state.chosenAppetizers.push(appetizer);
-      }
-      else {
+      } else {
         var a = state.chosenAppetizers.length;
         var same = false;
 
@@ -89,7 +95,7 @@ const store = createStore({
         }
       }
     },
-  }
+  },
 });
 
 export default store;

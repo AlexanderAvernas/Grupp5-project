@@ -1,22 +1,24 @@
 <script>
 import useValidate from "@vuelidate/core";
+
 import { required, email, numeric, alpha } from "@vuelidate/validators";
 import { RouterLink } from "vue-router";
 export default {
   data() {
     return {
-      date: this.$store.getters.date,
-      time: this.$store.getters.time,
-      guests: this.$store.getters.guests,
       v$: useValidate(),
       Förnamn: "",
       Efternamn: "",
       Email: "",
       Tel: "",
-
       shadow: "0 0 10px red",
-     
     };
+  },
+
+  computed: {
+    priceCalc() {
+      return this.$store.getters.priceCalc;
+    },
   },
   methods: {
     submitForm() {
@@ -26,6 +28,7 @@ export default {
       }
     },
   },
+
   validations() {
     return {
       Förnamn: { required, alpha },
@@ -42,20 +45,25 @@ export default {
     <h1 class="booking__title">Bordsbokning:</h1>
     <div class="booking__para--container">
       <div class="booking__para--variables">
-        <div v-if="$store.state.time && $store.state.date" class="v-if">
+        <div
+          v-if="$store.state.time && $store.state.date && $store.state.table"
+          class="v-if"
+        >
           <p class="booking__para">{{ $store.state.time }}</p>
-          <p class="booking__para">Bord: {{}}</p>
+          <p class="booking__para">Bord: {{ $store.state.table }}</p>
           <p class="booking__para">{{ $store.state.date }}</p>
         </div>
 
         <div v-else class="v-else">
-          <p class="booking__para">Bord: Välj</p>
-          <p class="booking__para">Tid: Välj</p>
-          <p class="booking__para">Datum: Välj</p>
+          <p class="booking__para">Tid: Ej valt</p>
+          <p class="booking__para">Bord: Ej Valt</p>
+          <p class="booking__para">Datum: Ej valt</p>
         </div>
       </div>
       <div class="booking__change">
-        <p class="booking__para border__bottom textdecor">Ändra</p>
+        <RouterLink class="nav__link" to="/booking">
+          <p class="booking__para border__bottom textdecor">Ändra</p>
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -78,24 +86,27 @@ export default {
         </div>
       </li>
       <div class="booking__change minimum__width margin__top displayflex">
-        <p class="booking__para border__bottom textdecor">Lägg Till/Ta Bort</p>
-        <p class="booking__para">
-          Total: {{ $store.state.appetizerTotalPrice }}kr
+        <RouterLink class="nav__link" to="/ordering">
+          <p class="booking__para border__bottom textdecor">
+            Lägg Till/Ta Bort
+          </p>
+        </RouterLink>
+
+        <p v-if="$store.state.count" class="booking__para">
+          Quiz Rabatt: {{ $store.state.count }}kr
         </p>
+        <p v-else class="booking__para">Quiz Rabatt: 0kr</p>
       </div>
+      <p class="booking__para textalignleft">Total: {{ priceCalc }}kr</p>
     </div>
   </div>
   <h1 class="booking__title">Går våran quiz och få rabatt redan idag!</h1>
-  
+
   <RouterLink class="nav__link" to="/Quiz">
-  <div class="button">
-      
+    <div class="button">
       <h1 class="booking__title button__title">quiza och få rabatt</h1>
-   
     </div>
-
-
-    </RouterLink>
+  </RouterLink>
   <div class="booking__container height__third margin__bot--none">
     <h1 class="booking__title">personuppgifter:</h1>
     <div class="booking__para--container flexdirection">
@@ -158,7 +169,7 @@ export default {
     <div class="booking__container--checkboxes">
       <div class="checkbox">
         <div class="checkbox__container">
-          <input  type="radio" name="methodpay" checked />
+          <input type="radio" name="methodpay" checked />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">swish</p>
             <p class="checkbox__para para__bot">Betala direkt</p>
@@ -176,7 +187,7 @@ export default {
 
       <div class="checkbox">
         <div class="checkbox__container">
-          <input  type="radio" name="methodpay" />
+          <input type="radio" name="methodpay" />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">BANKÖVERFÖRING</p>
             <p class="checkbox__para para__bot">Betala direkt</p>
@@ -193,7 +204,7 @@ export default {
       </div>
       <div class="checkbox">
         <div class="checkbox__container">
-          <input  type="radio" name="methodpay" />
+          <input type="radio" name="methodpay" />
           <div class="checkbox__paras">
             <p class="checkbox__para para__top">Klarna Faktura</p>
             <p class="checkbox__para para__bot">Ät nu - betala sen</p>
@@ -206,9 +217,12 @@ export default {
       </div>
     </div>
   </div>
-  <div @click="submitForm" class="button width__fix button__margin">
-    <h1 @click="submitForm" class="booking__title button__title">Betala</h1>
-  </div>
+  <button
+    @click="submitForm"
+    class="button width__fix button__margin booking__title button__title"
+  >
+    Betala
+  </button>
 </template>
 <style>
 input:focus,
@@ -446,7 +460,8 @@ p {
 }
 .nav__link {
   text-decoration: none;
- 
-  
+}
+.textalignleft {
+  text-align: end;
 }
 </style>
