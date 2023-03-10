@@ -5,7 +5,7 @@ const store = createStore({
     counter: 0,
     date: "",
     time: "",
-    guests: "",  
+    guests: "",
     appetizerId: [],
     chosenAppetizers: [],
     amountAppetizers: [],
@@ -26,8 +26,12 @@ const store = createStore({
     },
     updateGuests(state, payload) {
       state.guests = payload;
-    },  
-      
+    },
+    selectSeat(state, seat) {
+      state.table = seat;
+      console.log(state.table);
+    },
+
     addAppetizer(state, { appetizer, price, id }) {
       /* AMOUNT OF APPETIZERS "x2" */
 
@@ -40,17 +44,12 @@ const store = createStore({
         if (appetizer === state.amountAppetizers[i]) {
           count++;
         }
-      },
+      }
 
       /* TOTAL PRICE */
 
       state.appetizerTotalPrice = state.appetizerTotalPrice + price;
-    },
-    selectSeat(state, seat) {
-      state.table = seat;
-      console.log(state.table);
-    },
-  },
+
 
       /* SEPARATE PRICE */
 
@@ -74,7 +73,7 @@ const store = createStore({
 
       if (state.chosenAppetizers[0] === undefined) {
         state.chosenAppetizers.push(appetizer);
-      } 
+      }
       else {
         var a = state.chosenAppetizers.length;
         var same = false;
@@ -89,7 +88,8 @@ const store = createStore({
           state.chosenAppetizers.push(appetizer);
         }
       }
-  },
+    },
+  }
 });
 
 export default store;
