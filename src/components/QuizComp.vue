@@ -77,7 +77,9 @@ import { RouterLink, RouterView } from "vue-router";
           Vi har nu dragit av {{ count }} kr av din beställning
         </p>
         <a id="route" :class="{ a: !clicked }" class="btn">
-          <RouterLink class="nav-link" to="/">TILLBAKA TILL KASSAN</RouterLink>
+          <RouterLink class="nav-link" to="/checkout"
+            >TILLBAKA TILL KASSAN</RouterLink
+          >
         </a>
       </div>
     </div>
