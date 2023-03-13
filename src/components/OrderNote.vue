@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   font-family: "Amiko", sans-serif;
-  font-size: 30px;
+  font-size: 1.8rem;
   margin: 1vh 0 3vh 0;
 }
 
@@ -43,7 +43,7 @@
   align-items: center;
   list-style: none;
   font-family: "Grape Nuts", cursive;
-  font-size: 30px;
+  font-size: 1.8rem;
   padding: 0;
   margin: 0;
 }
@@ -65,7 +65,7 @@
   background-color: #d9d9d9;
   background-image: url(../assets/pics/logos/minus.png);
   background-size: cover;
-  height: 25px;
+  height: 1.5rem;
   width: 1.5rem;
   border: 0;
 }

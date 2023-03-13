@@ -56,26 +56,26 @@ import Footer from "../components/FooterPage.vue";
 #h1 {
   position: absolute;
   text-align: center;
-  width: 305px;
-  height: 61px;
-  top: 62px;
+  width: 19rem;
+  height: 3.8rem;
+  top: 3.8rem;
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 35px;
-  line-height: 47px;
+  font-size: 2.18rem;
+  line-height: 2.9rem;
   color: #ffffff;
 }
 
 #description {
   position: absolute;
-  width: 499px;
-  top: 123px;
+  width: 31.25rem;
+  top: 7.8rem;
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   text-align: center;
   color: #ffffff;
 }
@@ -98,29 +98,28 @@ import Footer from "../components/FooterPage.vue";
 }
 
 .ordering-setup > p {
-  width: 446px;
+  width: 27.8rem;
   color: #ffffff;
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   margin-left: 1.5rem;
 }
 
 #ordering-btn {
-  width: 247px;
-  height: 54px;
+  width: 15.6rem;
+  height: 3.4rem;
   color: #ffffff;
   background-color: #221109;
   border: 2px solid #ad8e6d;
-  border-radius: 27px;
+  border-radius: 1.8rem;
   font-family: "Amiko" sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: 1px;
   margin-top: 1.5rem;
 }
-
 
 @media only screen and (max-width: 1100px) {
   .ordering-background {
@@ -136,7 +135,7 @@ import Footer from "../components/FooterPage.vue";
 @media only screen and (max-width: 499px) {
   #description {
     width: auto;
-    padding: 10px;
+    padding: 0.625rem;
   }
 
   .ordering-setup > p {
