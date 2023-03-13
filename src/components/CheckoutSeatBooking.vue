@@ -2,7 +2,7 @@
 import useValidate from "@vuelidate/core";
 
 import { required, email, numeric, alpha } from "@vuelidate/validators";
-import { RouterLink, RouterView } from "vue-router";
+
 
 </script>
 
@@ -479,7 +479,7 @@ p {
   .input__field--container{
     flex-direction: column;
     align-items: center;
-    
+
   }
   .booking__title--media{
     text-align: center;
@@ -517,7 +517,7 @@ p {
   .v-else,
   .v-if {
     flex-direction: column;
-    
+
   }
 
   .height__fix--media {
@@ -545,13 +545,13 @@ p {
   .booking__title{
     text-align: center;
   }
-  
-  
+
+
 }
 @media (max-width: 400px){
   .para__top{
     font-size: 15px;
-    
+
   }
   .checkbox__paras{
    margin-left: 8px;
