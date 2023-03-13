@@ -2,7 +2,10 @@ import { createStore } from "vuex";
 
 const store = createStore({
   state: {
-    counter: 0,
+    food: {
+      product: [],
+      price: [],
+    },
     date: "",
     time: "",
     guests: "",
@@ -14,12 +17,22 @@ const store = createStore({
     appetizerTotalPrice: 0,
   },
   getters: {
-priceCalc: state =>{
-  return state.appetizerTotalPrice - state.count 
-}
+    priceCalc: (state) => {
+      return state.appetizerTotalPrice - state.count;
+    },
   },
 
   mutations: {
+    // Add product name and price to OrderNote component
+    addItem(state, items) {
+      state.food.product.push(items.product);
+      state.food.price.push(items.price);
+    },
+    // Remove the latest name and price
+    remItem(state) {
+      state.food.product.pop();
+      state.food.price.pop();
+    },
     increment(state, amount) {
       state.counter += amount;
     },

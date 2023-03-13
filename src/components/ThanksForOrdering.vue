@@ -64,7 +64,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 4.5rem;
-  line-height: 160px;
+  line-height: 10rem;
   text-align: center;
 
   color: #ffffff;
