@@ -151,7 +151,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #card-title {
   grid-area: title;
   justify-self: center;

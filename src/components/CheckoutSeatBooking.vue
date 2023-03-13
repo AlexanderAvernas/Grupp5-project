@@ -1,7 +1,8 @@
-<script>
+<script setup>
 import useValidate from "@vuelidate/core";
 
 import { required, email, numeric, alpha } from "@vuelidate/validators";
+import { RouterLink } from "vue-router";
 export default {
   data() {
     return {
@@ -38,6 +39,8 @@ export default {
   },
 };
 </script>
+
+
 
 <template>
   <div class="booking__container height__fix--media">
@@ -228,6 +231,8 @@ export default {
   >
     Betala
   </button>
+  <RouterView />
+
 </template>
 <style>
 input:focus,
@@ -473,6 +478,7 @@ p {
   .input__field--container {
     flex-direction: column;
     align-items: center;
+
   }
   .booking__title--media {
     text-align: center;
@@ -510,6 +516,7 @@ p {
   .v-else,
   .v-if {
     flex-direction: column;
+
   }
 
   .height__fix--media {
@@ -537,10 +544,13 @@ p {
   .booking__title {
     text-align: center;
   }
+
+
 }
 @media (max-width: 400px) {
   .para__top {
     font-size: 15px;
+
   }
   .checkbox__paras {
     margin-left: 8px;
