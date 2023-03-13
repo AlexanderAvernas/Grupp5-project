@@ -54,7 +54,7 @@ import FoodMenu from "../components/FoodMenu.vue";
   color: #fff;
   background-color: #000;
   border: 2px solid #ad8e6d;
-  border-radius: 30px;
+  border-radius: 1.875rem;
 }
 
 .landing-text {
@@ -66,8 +66,8 @@ import FoodMenu from "../components/FoodMenu.vue";
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 13px;
-  line-height: 24px;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
   text-align: center;
   color: #fff;
 }

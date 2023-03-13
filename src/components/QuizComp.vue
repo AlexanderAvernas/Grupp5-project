@@ -157,7 +157,7 @@ export default {
   justify-self: center;
   align-self: center;
   color: white;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 #text {
@@ -166,7 +166,7 @@ export default {
   justify-self: center;
   align-self: center;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 #route {
@@ -174,7 +174,7 @@ export default {
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
-  width: 10px;
+  width: 0.625rem;
   background-color: #221109;
 }
 
@@ -191,11 +191,11 @@ export default {
   justify-self: center;
   align-self: center;
   color: white;
-  font-size: 20px;
+  font-size: 1.25;
 }
 
 #quiztext > h4 {
-  font-size: 22px;
+  font-size: 1.3rem;
   color: #fff;
   grid-column-start: 2;
   grid-row-start: 4;
@@ -212,8 +212,8 @@ export default {
   color: #fff;
   background-color: #492717;
   border: 2px solid #ad8e6d;
-  border-radius: 30px;
-  font-size: 20px;
+  border-radius: 1.8rem;
+  font-size: 1.25rem;
 }
 
 #quiztext > .a {
@@ -225,8 +225,8 @@ export default {
   color: #fff;
   background-color: #221109;
   border: 2px solid #ad8e6d;
-  border-radius: 30px;
-  font-size: 20px;
+  border-radius: 1.8rem;
+  font-size: 1.25rem;
 }
 
 #quiztext > a:hover {
@@ -239,35 +239,35 @@ export default {
 
 #quiztext > h6 {
   color: #fff;
-  font-size: 22px;
+  font-size: 1.37rem;
   margin-right: auto;
 }
 
 #button1 {
   position: relative;
-  left: 50px;
-  top: 10px;
+  left: 3.1rem;
+  top: 0.625rem;
 }
 
 #button2 {
   position: relative;
-  right: 50px;
-  top: 10px;
+  right: 3.1rem;
+  top: 0.625rem;
 }
 #button3 {
   position: relative;
-  left: 50px;
-  bottom: 10px;
+  left: 3.1rem;
+  bottom: 0.625rem;
 }
 #button4 {
   position: relative;
-  right: 50px;
-  bottom: 10px;
+  right: 3.1rem;
+  bottom: 0.625;
 }
 
 #quiztext > h1 {
   grid-column-start: 1;
   grid-row-start: 1;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 </style>
