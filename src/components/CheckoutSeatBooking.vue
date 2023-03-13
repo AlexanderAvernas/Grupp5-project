@@ -41,7 +41,7 @@ export default {
 </script>
 
 <template>
-  <div class="booking__container">
+  <div class="booking__container height__fix--media">
     <h1 class="booking__title">Bordsbokning:</h1>
     <div class="booking__para--container">
       <div class="booking__para--variables">
@@ -62,7 +62,9 @@ export default {
       </div>
       <div class="booking__change">
         <RouterLink class="nav__link" to="/booking">
-          <p class="booking__para border__bottom textdecor">Ändra</p>
+          <p class="booking__para border__bottom textdecor border__media">
+            Ändra
+          </p>
         </RouterLink>
       </div>
     </div>
@@ -87,7 +89,7 @@ export default {
       </li>
       <div class="booking__change minimum__width margin__top displayflex">
         <RouterLink class="nav__link" to="/ordering">
-          <p class="booking__para border__bottom textdecor">
+          <p class="booking__para border__bottom textdecor media__border--fix">
             Lägg Till/Ta Bort
           </p>
         </RouterLink>
@@ -107,8 +109,8 @@ export default {
       <h1 class="booking__title button__title">quiza och få rabatt</h1>
     </div>
   </RouterLink>
-  <div class="booking__container height__third margin__bot--none">
-    <h1 class="booking__title">personuppgifter:</h1>
+  <div class="booking__container height__third--media height__third margin__bot--none">
+    <h1 class="booking__title booking__title--media">personuppgifter:</h1>
     <div class="booking__para--container flexdirection">
       <div class="input__field--container">
         <p class="booking__para margin__fix">Förnamn:</p>
@@ -162,10 +164,10 @@ export default {
         />
       </div>
     </div>
-    <h1 class="booking__title position__fix--five">Betalningsmetod:</h1>
+    <h1 class="booking__title position__fix--five booking__title--media">Betalningsmetod:</h1>
   </div>
 
-  <div class="booking__container height__third margin__top--none color__fix">
+  <div class="booking__container height__third  margin__top--none color__fix">
     <div class="booking__container--checkboxes">
       <div class="checkbox">
         <div class="checkbox__container">
@@ -463,5 +465,87 @@ p {
 }
 .textalignleft {
   text-align: end;
+}
+@media (max-width: 710px){
+  .input__field--container{
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .booking__title--media{
+    text-align: center;
+  }
+  .height__third--media{
+    height: 500px;
+    max-width: 400px;
+  }
+  .height__third{
+    max-width: 400px;
+  }
+  .booking__para--container{
+    height: auto;
+  }
+  .pos__fix{
+    top: 0;
+  }
+  .length__fix--two{
+    width: 200px;
+  }
+  .cred__input{
+   max-width: 200px;
+  }
+  .margin__fix--three{
+    margin-left: 5px;
+  }
+}
+@media (max-width: 650px) {
+  .booking__para--container {
+    flex-direction: column;
+  }
+  .booking__para--variables{
+    width: 100%;
+  }
+  .v-else,
+  .v-if {
+    flex-direction: column;
+    
+  }
+
+  .height__fix--media {
+    height: 300px;
+  }
+  .border__bottom {
+    width: 100%;
+  }
+  .border__media {
+    width: 55px;
+  }
+  .media__border--fix{
+    width: 150px;
+  }
+}
+@media (max-width: 500px){
+  .booking__change{
+    flex-direction: column;
+  }
+  .booking__para{
+    text-align: left;
+  }
+}
+@media (max-width: 573px){
+  .booking__title{
+    text-align: center;
+  }
+  
+  
+}
+@media (max-width: 400px){
+  .para__top{
+    font-size: 15px;
+    
+  }
+  .checkbox__paras{
+   margin-left: 8px;
+  }
 }
 </style>
