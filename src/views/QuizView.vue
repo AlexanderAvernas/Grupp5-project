@@ -17,7 +17,7 @@ import QuizComp from "../components/QuizComp.vue";
 
 <script></script>
 
-<style>
+<style scoped>
 body {
   background: url(../assets/pics/quiz_page.jpg);
   background-repeat: no-repeat;

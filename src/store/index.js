@@ -14,9 +14,9 @@ const store = createStore({
     appetizerTotalPrice: 0,
   },
   getters: {
-priceCalc: state =>{
-  return state.appetizerTotalPrice - state.count 
-}
+    priceCalc: (state) => {
+      return state.appetizerTotalPrice - state.count;
+    },
   },
 
   mutations: {

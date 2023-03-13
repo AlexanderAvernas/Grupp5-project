@@ -39,7 +39,7 @@ import FooterPage from "./FooterPage.vue";
     <textarea name="textarea" rows="6" cols="45"></textarea>
     <label class="label-name" for="name">Namn:</label>
     <input type="text" name="name" />
-    <button type="submit">SKICKA</button>
+    <button @click="thanks" type="submit">SKICKA</button>
     <p class="google-text">HITTA TILL OSS</p>
     <!-- GOOGLEMAPS -->
     <div class="mapouter">
@@ -56,14 +56,13 @@ import FooterPage from "./FooterPage.vue";
     </div>
   </div>
   <FooterPage />
-  <h4>{{ $store.state.date }}</h4>
-  <h4>{{ $store.state.time }}</h4>
-  <h4>{{ $store.state.guests }}</h4>
 </template>
 <script>
 export default {
-  data() {
-    return { date: 0 };
+  methods: {
+    thanks() {
+      alert("Tack för ditt meddelande!");
+    },
   },
 };
 </script>
