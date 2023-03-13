@@ -2,7 +2,7 @@
 import useValidate from "@vuelidate/core";
 
 import { required, email, numeric, alpha } from "@vuelidate/validators";
-
+import { RouterLink, RouterView } from "vue-router";
 
 </script>
 
