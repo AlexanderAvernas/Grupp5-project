@@ -151,7 +151,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #card-title {
   grid-area: title;
   justify-self: center;
@@ -159,7 +159,6 @@ export default {
   color: white;
   font-size: 2.5rem;
 }
-
 #text {
   grid-column-start: 1;
   grid-column-end: 3;
@@ -168,7 +167,6 @@ export default {
   text-align: center;
   font-size: 1.125rem;
 }
-
 #route {
   grid-column-start: 1;
   grid-column-end: 3;
@@ -177,7 +175,6 @@ export default {
   width: 0.625rem;
   background-color: #221109;
 }
-
 #quiztext {
   color: white;
   display: grid;
@@ -185,7 +182,6 @@ export default {
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "title title";
 }
-
 #quiztext > h5 {
   grid-area: title;
   justify-self: center;
@@ -193,7 +189,6 @@ export default {
   color: white;
   font-size: 1.25;
 }
-
 #quiztext > h4 {
   font-size: 1.3rem;
   color: #fff;
@@ -202,7 +197,6 @@ export default {
   align-self: self-end;
   margin-left: auto;
 }
-
 #quiztext > a {
   justify-self: center;
   align-self: center;
@@ -215,7 +209,6 @@ export default {
   border-radius: 1.8rem;
   font-size: 1.25rem;
 }
-
 #quiztext > .a {
   justify-self: center;
   align-self: center;
@@ -228,27 +221,22 @@ export default {
   border-radius: 1.8rem;
   font-size: 1.25rem;
 }
-
 #quiztext > a:hover {
   background-color: #492717;
 }
-
 #quiztext > a:active {
   background-color: #6d3d27;
 }
-
 #quiztext > h6 {
   color: #fff;
   font-size: 1.37rem;
   margin-right: auto;
 }
-
 #button1 {
   position: relative;
   left: 3.1rem;
   top: 0.625rem;
 }
-
 #button2 {
   position: relative;
   right: 3.1rem;
@@ -262,9 +250,8 @@ export default {
 #button4 {
   position: relative;
   right: 3.1rem;
-  bottom: 0.625;
+  bottom: 0.625rem;
 }
-
 #quiztext > h1 {
   grid-column-start: 1;
   grid-row-start: 1;
