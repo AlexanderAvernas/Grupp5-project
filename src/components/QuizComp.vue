@@ -58,7 +58,6 @@ import { RouterLink, RouterView } from "vue-router";
             v-on:click="
               next();
               pong(quiz.svar === selected);
-              count(questionIndex === 5);
             "
           >
             Nästa
