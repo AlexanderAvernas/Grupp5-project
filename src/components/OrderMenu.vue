@@ -18,6 +18,11 @@ export default {
       drinks: null,
     };
   },
+  methods: {
+    starterClick(appetizer, price, id) {
+      this.$store.commit("addAppetizer", { appetizer, price, id });
+    },
+  },
 };
 </script>
 
@@ -30,15 +35,11 @@ export default {
         <p class="product">{{ appetizer.product }}</p>
         <p class="price">{{ appetizer.price }}kr</p>
         <button
-          @click="
-            $store.commit('addItem', {
-              product: appetizer.product,
-              price: appetizer.price,
-            })
-          "
           class="plus"
+          @click="
+            starterClick(appetizer.product, appetizer.price, appetizer.id)
+          "
         ></button>
-        <button @click="$store.commit('remItem')" class="minus"></button>
       </li>
     </ul>
     <h3>Varmrätter</h3>
@@ -103,7 +104,7 @@ export default {
   width: 564px;
   height: 722px;
   margin: 1.5rem;
-  overflow: scroll;
+  overflow-y: scroll;
   border-top: 2rem solid #1c1c1c;
   border-bottom: 2rem solid #1c1c1c;
 }
@@ -112,7 +113,7 @@ export default {
   display: flex;
   justify-content: center;
   font-size: 30px;
-  margin-top: 3vh;
+  margin-top: 1vh;
   margin-bottom: 2vh;
 }
 

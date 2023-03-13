@@ -77,7 +77,7 @@ import { RouterLink, RouterView } from "vue-router";
           Vi har nu dragit av {{ count }} kr av din beställning
         </p>
         <a id="route" :class="{ a: !clicked }" class="btn">
-          <RouterLink class="nav-link" to="/checkout"
+          <RouterLink class="nav-link" to="/checkout" @Click="$store.commit('updateCount', this.count)"
             >TILLBAKA TILL KASSAN</RouterLink
           >
         </a>
