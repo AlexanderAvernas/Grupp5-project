@@ -6,7 +6,9 @@ import FoodMenu from "../components/FoodMenu.vue";
   <!-- Left side of screen -->
   <div class="landing-page">
     <h1 class="landing-title">Lorem Ipsum</h1>
-    <button class="landing-btn">BOKA BORD</button>
+    <button class="landing-btn">
+      <RouterLink class="landing-link" to="/booking">Boka Bord</RouterLink>
+    </button>
     <p class="landing-text">
       En kort beskrivning av konceptet. Att bordet bokas, maten bokas och allt
       är redo när kunden väl är framme bla bla bla och mer bla
@@ -55,6 +57,11 @@ import FoodMenu from "../components/FoodMenu.vue";
   background-color: #000;
   border: 2px solid #ad8e6d;
   border-radius: 1.875rem;
+}
+
+.landing-link {
+  text-decoration: none;
+  color: #fff;
 }
 
 .landing-text {

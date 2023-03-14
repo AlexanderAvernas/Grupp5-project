@@ -38,39 +38,10 @@ import { RouterLink, RouterView } from "vue-router";
               <RouterLink class="nav-link" to="/">Hem</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/Quiz">quiz</RouterLink>
-            </li>
-            <li class="nav-item">
               <RouterLink class="nav-link" to="/booking">Boka Bord</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/ordering"
-                >Beställ mat</RouterLink
-              >
-            </li>
-
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Mer
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <RouterLink class="nav-link" to="/ThanksForOrdering"
-                    >Tack</RouterLink
-                  >
-                </li>
-                <li>
-                  <RouterLink class="nav-link" to="/contact"
-                    >Kontakt</RouterLink
-                  >
-                </li>
-              </ul>
+              <RouterLink class="nav-link" to="/contact">Kontakt</RouterLink>
             </li>
           </ul>
         </div>
