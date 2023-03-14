@@ -91,7 +91,6 @@ import { RouterLink, RouterView } from "vue-router";
 
 <script>
 import axios from "axios";
-
 export default {
   data() {
     return {
@@ -107,7 +106,6 @@ export default {
       clicked3: false,
     };
   },
-
   mounted() {
     this.fetchData();
     console.log(this.value);
@@ -118,12 +116,10 @@ export default {
       const result = await response.data;
       this.quizes = result;
     },
-
     model(val) {
       this.selected = val;
       console.log(this.selected);
     },
-
     pong(val) {
       if (val === true) {
         this.value++;
@@ -132,7 +128,6 @@ export default {
       console.log(this.value);
       console.log(this.count);
     },
-
     next: function () {
       this.questionIndex++;
       this.clicked = false;
@@ -141,7 +136,6 @@ export default {
       this.clicked3 = false;
       this.question++;
     },
-
     prev: function () {
       this.questionIndex--;
       this.question--;
