@@ -26,9 +26,6 @@ export default {
   methods: {
     submitForm() {
       this.v$.$validate();
-      if (!this.v$.$error) {
-        alert("Form successfully submitted.");
-      }
     },
   },
 
@@ -230,7 +227,7 @@ export default {
     @click="submitForm"
     class="button width__fix button__margin booking__title button__title"
   >
-    Betala
+    <RouterLink class="landing-link" to="/ThanksForOrdering">Betala</RouterLink>
   </button>
   <RouterView />
 </template>
@@ -288,6 +285,12 @@ p {
   letter-spacing: 1px;
   line-height: 27px;
 }
+
+.landing-link {
+  text-decoration: none;
+  color: #fff;
+}
+
 .booking__para--container {
   width: 100%;
   max-width: 611px;
