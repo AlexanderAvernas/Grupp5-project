@@ -3,29 +3,30 @@ import QuizComp from "../components/QuizComp.vue";
 </script>
 
 <template>
-  <div id="Quizdefault">
-    <h2>Quiz</h2>
-    <h3>
-      Svara rätt på alla fem frågor och vinn upp till 100kr rabatt på din
-      beställning.
-    </h3>
-  </div>
-  <div id="cardquiz">
-    <QuizComp> </QuizComp>
+  <div id="backg">
+    <div id="Quizdefault">
+      <h2>Quiz</h2>
+      <h3>
+        Svara rätt på alla fem frågor och vinn upp till 100kr rabatt på din
+        beställning.
+      </h3>
+    </div>
+    <div id="cardquiz">
+      <QuizComp> </QuizComp>
+    </div>
   </div>
 </template>
 
 <script></script>
 
 <style scoped>
-body {
+#backg {
   background: url(../assets/pics/quiz_page.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
 }
-
 #card {
   background: #1c1c1c;
   width: 744px;
@@ -33,17 +34,14 @@ body {
   border: 2px solid #6e6e6e;
   border-radius: 26px;
 }
-
 #cardquiz {
   margin-top: 20vh;
   margin-bottom: 10vh;
   display: grid;
 }
-
 #col {
   margin: auto;
 }
-
 #Quizdefault h2 {
   font-family: amiko;
   font-weight: 400;
@@ -62,13 +60,11 @@ body {
   top: 50px;
   text-align: center;
 }
-
 @media screen and (max-width: 747px) {
   #card {
     width: auto;
     height: 400px;
   }
-
   #Quizdefault h2 {
     font-family: amiko;
     font-weight: 400;
@@ -87,7 +83,6 @@ body {
     top: 50px;
     text-align: center;
   }
-
   #quiztext > a {
     justify-self: center;
     align-self: center;
@@ -100,7 +95,6 @@ body {
     border-radius: 30px;
     font-size: 19px;
   }
-
   #quiztext > .a {
     justify-content: center;
     align-self: center;
@@ -113,21 +107,17 @@ body {
     border-radius: 30px;
     font-size: 19px;
   }
-
   #quiztext > a:hover {
     background-color: #492717;
   }
-
   #quiztext > a:active {
     background-color: #6d3d27;
   }
-
   #button1 {
     position: relative;
     left: 1px;
     top: 10px;
   }
-
   #button2 {
     position: relative;
     right: 1px;
@@ -143,7 +133,6 @@ body {
     right: 1px;
     bottom: 10px;
   }
-
   #quiztext > h5 {
     grid-area: title;
     justify-self: center;
@@ -154,26 +143,22 @@ body {
     top: 10px;
   }
 }
-
 @media screen and (max-width: 520px) {
-  body {
+  #backg {
     background: url(../assets/pics/quiz_page.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 200vh;
   }
-
   #card {
     width: auto;
     height: 700px;
   }
-
   #quiztext {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   }
-
   #button1 {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -182,7 +167,6 @@ body {
     position: relative;
     top: 0px;
   }
-
   #button2 {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -207,7 +191,6 @@ body {
     position: relative;
     bottom: 0px;
   }
-
   #quiztext > h5 {
     grid-area: title;
     justify-self: center;
@@ -217,7 +200,6 @@ body {
     position: relative;
     top: 30px;
   }
-
   #quiztext > a {
     justify-self: center;
     align-self: center;
@@ -230,7 +212,6 @@ body {
     border-radius: 30px;
     font-size: 19px;
   }
-
   #quiztext > .a {
     justify-content: center;
     align-self: center;

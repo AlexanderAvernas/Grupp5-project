@@ -309,11 +309,11 @@ div.tableCenterL-container > div:nth-child(2) > div {
   margin-top: 5.625rem;
 }
 div.tablesRight-container > div:nth-child(1) {
-  border-top: 6px solid #6e6e6e;
-  border-bottom: 6px solid #6e6e6e;
+  border-top: 0.375rem solid #6e6e6e;
+  border-bottom: 0.375rem solid #6e6e6e;
 }
 div.tablesRight-container > div:nth-child(2) {
-  border-bottom: 6px solid #6e6e6e;
+  border-bottom: 0.375rem solid #6e6e6e;
 }
 div.tablesRight-container > div:nth-child(1) > div {
   width: 6rem;
@@ -423,7 +423,7 @@ div.tablesRight-container > div:nth-child(2) > div {
 }
 input {
   background-color: #d9d9d9;
-  border-radius: 6px;
+  border-radius: 0.375rem;
 }
 /* BUTTON VIDARE TILL MENY */
 .button-container {
@@ -439,7 +439,7 @@ button {
   color: #fff;
   background-color: #221109;
   border: 2px solid #ad8e6d;
-  border-radius: 27px;
+  border-radius: 1.875rem;
   font-family: "Amiko" sans-serif;
   font-style: normal;
   font-weight: 600;

@@ -47,7 +47,16 @@ export default {
       <li class="menu-li" v-for="main in mains" :key="main.id">
         <p class="product">{{ main.product }}</p>
         <p class="price">{{ main.price }}kr</p>
-        <button class="plus"></button>
+        <button
+          @click="
+            $store.commit('addItem', {
+              product: main.product,
+              price: main.price,
+            })
+          "
+          class="plus"
+        ></button>
+        <button @click="$store.commit('remItem')" class="minus"></button>
       </li>
     </ul>
     <h3>Deserter</h3>
@@ -55,7 +64,16 @@ export default {
       <li class="menu-li" v-for="desert in deserts" :key="desert.id">
         <p class="product">{{ desert.product }}</p>
         <p class="price">{{ desert.price }}kr</p>
-        <button class="plus"></button>
+        <button
+          @click="
+            $store.commit('addItem', {
+              product: desert.product,
+              price: desert.price,
+            })
+          "
+          class="plus"
+        ></button>
+        <button @click="$store.commit('remItem')" class="minus"></button>
       </li>
     </ul>
     <h3>Drycker</h3>
@@ -63,7 +81,16 @@ export default {
       <li class="menu-li" v-for="drink in drinks" :key="drink.id">
         <p class="product">{{ drink.product }}</p>
         <p class="price">{{ drink.price }}kr</p>
-        <button class="plus"></button>
+        <button
+          @click="
+            $store.commit('addItem', {
+              product: drink.product,
+              price: drink.price,
+            })
+          "
+          class="plus"
+        ></button>
+        <button @click="$store.commit('remItem')" class="minus"></button>
       </li>
     </ul>
   </div>
@@ -74,8 +101,8 @@ export default {
   background-color: #1c1c1c;
   color: #ffffff;
   font-family: "Cutive Mono", monospace;
-  width: 564px;
-  height: 722px;
+  width: 35.25rem;
+  height: 45rem;
   margin: 1.5rem;
   overflow-y: scroll;
   border-top: 2rem solid #1c1c1c;
@@ -85,7 +112,7 @@ export default {
 .menu-container > h2 {
   display: flex;
   justify-content: center;
-  font-size: 30px;
+  font-size: 1.87rem;
   margin-top: 1vh;
   margin-bottom: 2vh;
 }
@@ -94,12 +121,12 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .menu-ul {
   list-style: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   padding: 0;
 }
 
@@ -118,10 +145,20 @@ export default {
   background-color: #1c1c1c;
   background-image: url(../assets/pics/logos/plus.png);
   background-size: cover;
-  height: 25px;
+  height: 1.5rem;
   width: 1.5rem;
   border: 0;
-  margin-left: 8px;
+  margin-left: 0.5rem;
+}
+
+.minus {
+  background-color: #1c1c1c;
+  background-image: url(../assets/pics/logos/minus.png);
+  background-size: cover;
+  height: 1.3rem;
+  width: 1.2rem;
+  border: 0;
+  margin-left: 0.5rem;
 }
 
 @media only screen and (max-width: 564px) {
