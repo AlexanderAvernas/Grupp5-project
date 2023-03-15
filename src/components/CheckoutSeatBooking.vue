@@ -75,15 +75,15 @@ export default {
     <div class="booking__para--container flexdirection height__auto">
       <li
         class="booking__para--orders--list"
-        v-for="(appetizer, index) in $store.state.chosenAppetizers"
-        :key="appetizer.id"
+        v-for="(food, index) in $store.state.chosenFood"
+        :key="food.id"
       >
         <div class="booking__para--variables">
-          <p class="booking__para">{{ appetizer }}</p>
+          <p class="booking__para">{{ food }}</p>
         </div>
         <div class="booking__change">
           <p class="booking__para">
-            {{ $store.state.chosenAppetizersPrice[index] }}kr
+            {{ $store.state.chosenFoodPrice[index] }}kr
           </p>
         </div>
       </li>
