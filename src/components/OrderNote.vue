@@ -1,15 +1,18 @@
-<script></script>
+<script>
+</script>
 
 <template>
   <div class="order-container">
     <h2>BESTÄLLNING</h2>
     <ul
       class="order-list"
-      v-for="appetizer in $store.state.chosenAppetizers"
-      :key="appetizer.id"
+      v-for="food in $store.state.chosenFood"
+      :key="food.id"
     >
-      <li class="order-item">{{ appetizer }}</li>
-      <button class="minus hide"></button>
+      <li class="order-item">{{ food }}</li>
+      <!-- Maybe implement later on
+        <button class="minus hide"></button>
+      -->
     </ul>
   </div>
 </template>
@@ -53,6 +56,9 @@
   padding: 0;
 }
 
+/*
+Minus button next to food (maybe implement later on)
+
 .order-list:hover .hide {
   display: block;
 }
@@ -69,6 +75,7 @@
   width: 1.5rem;
   border: 0;
 }
+*/
 
 @media only screen and (max-width: 446px) {
   .order-container {

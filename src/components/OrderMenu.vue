@@ -19,8 +19,11 @@ export default {
     };
   },
   methods: {
-    starterClick(appetizer, price, id) {
-      this.$store.commit("addAppetizer", { appetizer, price, id });
+    plus(food, price, id) {
+      this.$store.commit("addFood", { food, price, id });
+    },
+    minus(food, price, id) {
+      this.$store.commit("deleteFood", { food, price, id });
     },
   },
 };
@@ -37,9 +40,10 @@ export default {
         <button
           class="plus"
           @click="
-            starterClick(appetizer.product, appetizer.price, appetizer.id)
+            plus(appetizer.product, appetizer.price, appetizer.id)
           "
         ></button>
+        <button @click="minus(appetizer.product, appetizer.price, appetizer.id)" class="minus"></button>
       </li>
     </ul>
     <h3>Varmrätter</h3>
@@ -49,14 +53,11 @@ export default {
         <p class="price">{{ main.price }}kr</p>
         <button
           @click="
-            $store.commit('addItem', {
-              product: main.product,
-              price: main.price,
-            })
+            plus(main.product, main.price, main.id)
           "
           class="plus"
         ></button>
-        <button @click="$store.commit('remItem')" class="minus"></button>
+        <button @click="minus(main.product, main.price, main.id)" class="minus"></button>
       </li>
     </ul>
     <h3>Deserter</h3>
@@ -66,14 +67,11 @@ export default {
         <p class="price">{{ desert.price }}kr</p>
         <button
           @click="
-            $store.commit('addItem', {
-              product: desert.product,
-              price: desert.price,
-            })
+            plus(desert.product, desert.price, desert.id)
           "
           class="plus"
         ></button>
-        <button @click="$store.commit('remItem')" class="minus"></button>
+        <button @click="minus(desert.product, desert.price, desert.id)" class="minus"></button>
       </li>
     </ul>
     <h3>Drycker</h3>
@@ -83,14 +81,11 @@ export default {
         <p class="price">{{ drink.price }}kr</p>
         <button
           @click="
-            $store.commit('addItem', {
-              product: drink.product,
-              price: drink.price,
-            })
+            plus(drink.product, drink.price, drink.id)
           "
           class="plus"
         ></button>
-        <button @click="$store.commit('remItem')" class="minus"></button>
+        <button @click="minus(drink.product, drink.price, drink.id)" class="minus"></button>
       </li>
     </ul>
   </div>
