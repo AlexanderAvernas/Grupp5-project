@@ -56,16 +56,8 @@ import FooterPage from "./FooterPage.vue";
     </div>
   </div>
   <FooterPage />
-  <h4>{{ $store.state.date }}</h4>
-  <h4>{{ $store.state.time }}</h4>
-  <h4>{{ $store.state.guests }}</h4>
 </template>
 <script>
-export default {
-  data() {
-    return { date: 0 };
-  },
-};
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Amiko&display=swap");

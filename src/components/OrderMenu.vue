@@ -39,11 +39,12 @@ export default {
         <p class="price">{{ appetizer.price }}kr</p>
         <button
           class="plus"
-          @click="
-            plus(appetizer.product, appetizer.price, appetizer.id)
-          "
+          @click="plus(appetizer.product, appetizer.price, appetizer.id)"
         ></button>
-        <button @click="minus(appetizer.product, appetizer.price, appetizer.id)" class="minus"></button>
+        <button
+          @click="minus(appetizer.product, appetizer.price, appetizer.id)"
+          class="minus"
+        ></button>
       </li>
     </ul>
     <h3>Varmrätter</h3>
@@ -52,12 +53,13 @@ export default {
         <p class="product">{{ main.product }}</p>
         <p class="price">{{ main.price }}kr</p>
         <button
-          @click="
-            plus(main.product, main.price, main.id)
-          "
+          @click="plus(main.product, main.price, main.id)"
           class="plus"
         ></button>
-        <button @click="minus(main.product, main.price, main.id)" class="minus"></button>
+        <button
+          @click="minus(main.product, main.price, main.id)"
+          class="minus"
+        ></button>
       </li>
     </ul>
     <h3>Deserter</h3>
@@ -66,12 +68,13 @@ export default {
         <p class="product">{{ desert.product }}</p>
         <p class="price">{{ desert.price }}kr</p>
         <button
-          @click="
-            plus(desert.product, desert.price, desert.id)
-          "
+          @click="plus(desert.product, desert.price, desert.id)"
           class="plus"
         ></button>
-        <button @click="minus(desert.product, desert.price, desert.id)" class="minus"></button>
+        <button
+          @click="minus(desert.product, desert.price, desert.id)"
+          class="minus"
+        ></button>
       </li>
     </ul>
     <h3>Drycker</h3>
@@ -80,12 +83,13 @@ export default {
         <p class="product">{{ drink.product }}</p>
         <p class="price">{{ drink.price }}kr</p>
         <button
-          @click="
-            plus(drink.product, drink.price, drink.id)
-          "
+          @click="plus(drink.product, drink.price, drink.id)"
           class="plus"
         ></button>
-        <button @click="minus(drink.product, drink.price, drink.id)" class="minus"></button>
+        <button
+          @click="minus(drink.product, drink.price, drink.id)"
+          class="minus"
+        ></button>
       </li>
     </ul>
   </div>

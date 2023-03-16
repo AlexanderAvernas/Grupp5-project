@@ -53,11 +53,9 @@ const store = createStore({
       state.count = payload;
     },
 
-
     /*ADD FOOD BUTTON*/
 
     addFood(state, { food, price, id }) {
-
       /* AMOUNT OF APPETIZERS "x2" */
 
       state.amountFood.push(food);
@@ -71,8 +69,6 @@ const store = createStore({
         }
       }
 
-      console.log(state.amountFood)
-
       /* TOTAL PRICE */
 
       state.foodTotalPrice = state.foodTotalPrice + price;
@@ -85,8 +81,7 @@ const store = createStore({
       for (let i = 0; i < c; i++) {
         if (id === state.foodId[i]) {
           exists = true;
-          state.chosenFoodPrice[i] =
-            state.chosenFoodPrice[i] + price;
+          state.chosenFoodPrice[i] = state.chosenFoodPrice[i] + price;
         }
       }
 
@@ -118,52 +113,50 @@ const store = createStore({
     /*DELETE FOOD BUTTON*/
 
     deleteFood(state, { food, price, id }) {
+      if ((state.foodTotalPrice > 0, state.amountFood.includes(food))) {
+        /* AMOUNT OF APPETIZERS "x2" */
 
-      if(state.foodTotalPrice > 0, state.amountFood.includes(food)){
+        var amount = state.amountFood.length;
+        var count = 0;
 
-    /* AMOUNT OF APPETIZERS "x2" */
-
-      var amount = state.amountFood.length;
-      var count = 0
-
-      for (let i = 0; i < amount; i++) {
-        if (food === state.amountFood[i]) {
-          count++;
-        }
-      }
-
-      count = count -1
-
-      for (let i = 0; i < amount; i++) {
-        if (food === state.amountFood[i]) {
-          delete state.amountFood[i]
-          break;
-        }
-      }
-
-    /* TOTAL PRICE */
-
-      state.foodTotalPrice = state.foodTotalPrice - price;
-
-    /* SEPARATE PRICE */
-
-      var c = state.foodId.length;
-      var exists = false;
-
-      for (let i = 0; i < c; i++) {
-        if (id === state.foodId[i]) {
-          exists = true;
-          state.chosenFoodPrice[i] = state.chosenFoodPrice[i] - price;
-
-          if(state.chosenFoodPrice[i] === 0){
-            state.chosenFoodPrice.splice([i], 1);
-            state.foodId.splice([i], 1);
-              break;
+        for (let i = 0; i < amount; i++) {
+          if (food === state.amountFood[i]) {
+            count++;
           }
         }
-      }
 
-    /* SUB APPETIZER FROM NOTE*/
+        count = count - 1;
+
+        for (let i = 0; i < amount; i++) {
+          if (food === state.amountFood[i]) {
+            delete state.amountFood[i];
+            break;
+          }
+        }
+
+        /* TOTAL PRICE */
+
+        state.foodTotalPrice = state.foodTotalPrice - price;
+
+        /* SEPARATE PRICE */
+
+        var c = state.foodId.length;
+        var exists = false;
+
+        for (let i = 0; i < c; i++) {
+          if (id === state.foodId[i]) {
+            exists = true;
+            state.chosenFoodPrice[i] = state.chosenFoodPrice[i] - price;
+
+            if (state.chosenFoodPrice[i] === 0) {
+              state.chosenFoodPrice.splice([i], 1);
+              state.foodId.splice([i], 1);
+              break;
+            }
+          }
+        }
+
+        /* SUB APPETIZER FROM NOTE*/
 
         var a = state.chosenFood.length;
 
@@ -171,17 +164,16 @@ const store = createStore({
           if (state.chosenFood[i].includes(food)) {
             state.chosenFood.splice([i], 1, food + " x" + count);
 
-            if(count === 1){
+            if (count === 1) {
               state.chosenFood.splice([i], 1, food);
-            }
-            else if(count === 0){
+            } else if (count === 0) {
               state.chosenFood.splice([i], 1);
               break;
             }
           }
         }
       }
-    }
+    },
   },
 });
 
