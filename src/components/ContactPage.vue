@@ -57,8 +57,7 @@ import FooterPage from "./FooterPage.vue";
   </div>
   <FooterPage />
 </template>
-<script>
-</script>
+<script></script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Amiko&display=swap");
 /* Background image */

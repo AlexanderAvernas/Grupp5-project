@@ -10,7 +10,7 @@
     },
     {
         "id": "2",
-        "fråga": "vem är vargen från filmen puss in boots the last wish",
+        "fråga": "Vem är vargen från filmen Puss in boots the last wish",
         "svar": "döden",
         "felsvar1": "kattens vän",
         "felsvar2": "varg med attityd",
@@ -28,8 +28,8 @@
     },
     {
         "id": "4",
-        "fråga": "vad känner programmerare efter lång dag med kod som hade massa bugger och äntligen blev färdig",
-        "svar": "jag behöver hammare",
+        "fråga": "Vad känner programmerare efter en lång dag med kod som hade massa buggar och äntligen blev färdig",
+        "svar": "behöver en hammare",
         "felsvar1":"dags att ta friskluft",
         "felsvar2": "inget nytt",
         "felsvar3": "jag är nöjd",
@@ -37,7 +37,7 @@
     },
     {
         "id": "5",
-        "fråga": "vem är skurken ",
+        "fråga": "vem är bästa läraren",
         "svar": "richard",
         "felsvar1": "random matte lärare",
         "felsvar2": "random historia lärare",
