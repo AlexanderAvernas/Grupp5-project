@@ -37,11 +37,11 @@
     },
     {
         "id": "5",
-        "fråga": "vem är bästa läraren",
-        "svar": "richard",
-        "felsvar1": "random matte lärare",
-        "felsvar2": "random historia lärare",
-        "felsvar3": "random språk lärare",
+        "fråga": "Vem var skurken i avengers endgame?",
+        "svar": "Thanos",
+        "felsvar1": "Captain America",
+        "felsvar2": "Iron man",
+        "felsvar3": "Alien",
         "selected": "null"
     }
 
